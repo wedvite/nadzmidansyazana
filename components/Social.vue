@@ -4,7 +4,7 @@
       <div class="level is-mobile" v-if="s.ig_tags">
         <div class="level-item is-narrow">
           <figure>
-            <img src="~assets/icons/ig.png" width="30">
+            <img src="~assets/icons/ig.png" width="30" />
           </figure>
         </div>
         <div class="level-item">
@@ -14,16 +14,21 @@
                 :href="'https://www.instagram.com/explore/tags/' + s.ig_tags"
                 target="_blank"
                 class="has-text-link"
-              >#{{s.ig_tags}}</a>
+                >#{{ s.ig_tags }}</a
+              >
             </span>
-            <span class="tag-heading signature is-block-mobile">Our Wedding Signature</span>
+            <span
+              v-if="s.ig_signature"
+              class="tag-heading signature is-block-mobile"
+              >{{ s.ig_signature }}</span
+            >
           </p>
         </div>
       </div>
       <div class="level is-mobile" v-if="s.fb_page">
         <div class="level-item is-narrow">
           <figure>
-            <img src="~assets/icons/fb.png" width="30">
+            <img src="~assets/icons/fb.png" width="30" />
           </figure>
         </div>
         <div class="level-item">
@@ -33,7 +38,8 @@
                 :href="s.fb_page.link"
                 target="_blank"
                 class="has-text-link is-capitalized"
-              >{{s.fb_page.title || 'Our Facebook Page'}}</a>
+                >{{ s.fb_page.title || "Our Facebook Page" }}</a
+              >
             </span>
           </p>
         </div>
@@ -46,8 +52,18 @@
       class="carousel carousel-animated carousel-animate-slide"
     >
       <div class="carousel-container">
-        <div v-for="(img, index) in s.images" :key="index" class="carousel-item has-background">
-          <img class="is-background" :src="img.src" alt width="640" height="310">
+        <div
+          v-for="(img, index) in s.images"
+          :key="index"
+          class="carousel-item has-background"
+        >
+          <img
+            class="is-background"
+            :src="img.src"
+            alt
+            width="640"
+            height="310"
+          />
           <div v-if="img.htmlTitle" class="title" v-html="img.htmlTitle"></div>
         </div>
       </div>
@@ -69,12 +85,12 @@ import { mapState } from "vuex";
 export default {
   computed: {
     ...mapState({
-      s: state => state.info.social_section
-    })
+      s: (state) => state.info.social_section,
+    }),
   },
   mounted() {
     bulmaAccordion.attach();
-  }
+  },
 };
 </script>
 
