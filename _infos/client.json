@@ -72,11 +72,40 @@
         "override_icons_color": true,
         "contacts": [
             {
-                "name": "Fadzil",
-                "rel": "Developer",
-                "tel": 60106505576,
-                "whatsapp": true,
-                "telegram": "fadziljusri"
+                "name": "Shukri",
+                "rel": "Ayah",
+                "tel": 60199654231,
+                "whatsapp": true
+            },
+            {
+                "name": "Zubaidah",
+                "rel": "Mak",
+                "tel": 601151416709,
+                "whatsapp": true
+            },
+            {
+                "name": "Syuhada",
+                "rel": "Adik",
+                "tel": 601111528414,
+                "whatsapp": true
+            },
+            {
+                "name": "Luqman",
+                "rel": "Adik",
+                "tel": 60106644025,
+                "whatsapp": true
+            },
+            {
+                "name": "Husna",
+                "rel": "Adik",
+                "tel": 60176314473,
+                "whatsapp": true
+            },
+            {
+                "name": "Mustaqim",
+                "rel": "Adik",
+                "tel": 601139766806,
+                "whatsapp": true
             }
         ]
     },
