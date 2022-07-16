@@ -1,5 +1,6 @@
-import { fireStore as conf } from "../wedvite.config";
-import { fireDb, firebase } from "~/plugins/firebase";
+import { fireStore as conf } from "~/wedvite.config";
+import { fireDb } from "~/plugins/firebase";
+import { v4 as uuidv4 } from 'uuid';
 import _merge from "lodash.merge";
 
 import { INFO_MS, INFO_EN } from "@/middleware/jsonDefault/lang";
@@ -54,7 +55,7 @@ export const actions = {
       .onSnapshot(doc => {
         doc = doc.data();
         // console.log("Current data: ", doc);
-        if (doc && doc.rsvp) commit("SET_RSVP", doc.rsvp);
+        if (doc?.rsvp) commit("SET_RSVP", Object.values(doc.rsvp));
       });
 
     let mergedInfo;
@@ -68,51 +69,28 @@ export const actions = {
     commit("SET_DB_INFO", doc);
   },
   updateRsvp({ }, newRsvp) {
-    if (newRsvp.details.unix) {
-      fireDb
-        .collection(conf.collection)
-        .doc(conf.doc)
-        .get()
-        .then(function (doc) {
-          let { rsvp = [] } = doc.data() || {};
-          for (let i = 0, N = rsvp.reverse().length; i < N; i++) {
-            if (newRsvp.details.unix == rsvp[i].details.unix) {
-              rsvp[i] = newRsvp;
-              localStorage.setItem(
-                `rsvp_${window.location.href}`,
-                JSON.stringify(newRsvp)
-              );
-              break;
-            }
-          }
-
-          fireDb
-            .collection(conf.collection)
-            .doc(conf.doc)
-            .update({ rsvp });
-
-          // Build doc ref from doc.id
-        });
-
-      return;
-    }
-
     let dt = new Date();
     newRsvp.details.unix = dt.getTime();
     newRsvp.details.formattedDate = formatDate(dt);
-    localStorage.setItem(
-      `rsvp_${window.location.href}`,
-      JSON.stringify(newRsvp)
-    );
+
+    if (!newRsvp?.id) {
+      // New record
+      newRsvp.id = uuidv4();
+    } 
+    // console.log({ newRsvp });
 
     fireDb
       .collection(conf.collection)
       .doc(conf.doc)
       .update({
-        rsvp: firebase.firestore.FieldValue.arrayUnion(newRsvp)
-      });
+        [`rsvp.${newRsvp.id}`]: newRsvp
+      })
 
-    // console.log(newRsvp);
+    // Set localStorage
+    localStorage.setItem(
+      `rsvp_${window.location.href}`,
+      JSON.stringify(newRsvp)
+    );
   }
 };
 

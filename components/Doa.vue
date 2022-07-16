@@ -22,8 +22,10 @@ export default {
 @import "~assets/scss/var.scss";
 #doa-section {
   font-family: $secondary-font;
-  font-size: 0.9rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-style: italic;
+  // font-weight: 300;
+
 }
 </style>
 

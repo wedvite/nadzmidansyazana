@@ -33,12 +33,12 @@
           </template>
         </div>
 
-        <div :class="'dates-' + i.theme">
+        <div class="dates" :class="'dates-' + i.theme">
           <div class="date-gregorian">{{i.date.greg}}</div>
           <div v-if="i.date.hijri" class="date-hijri">{{i.date.hijri}}</div>
         </div>
 
-        <div :class="'venue-' + i.theme" v-html="i.address.general"></div>
+        <div class="venue" :class="'venue-' + i.theme" v-html="i.address.general"></div>
       </div>
     </div>
   </section>
@@ -57,6 +57,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "~assets/scss/var.scss";
+
 #main-content {
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
@@ -78,11 +80,15 @@ export default {
 .couples {
   display: flex;
   flex-direction: column;
+  font-family: $cover-font;
   
   &.reverse {
     flex-direction: column-reverse;
   }
 }
 
+.date-gregorian, .venue {
+  font-family: $primary-font;
+}
 </style>
 

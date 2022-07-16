@@ -72,9 +72,9 @@
         </div>
       </div>
 
-      <!-- Recent comments -->
+      <!-- Guestbook -->
       <h1
-        v-show="this.dbRsvp.length"
+        v-show="dbRsvp.length"
         class="is-size-4 has-text-weight-bold recent-comments"
         :class="'txt-dark-' + theme"
       >
@@ -96,7 +96,7 @@
         </div>
       </article>
 
-      <div class="buttons is-centered more">
+      <div v-if="dbRsvp.length" class="buttons is-centered more">
         <a class="has-text-link pointer" href="./rsvp/">All RSVP</a>
       </div>
 
@@ -126,7 +126,7 @@
         </div>
       </div>
 
-      <!-- rsvp details -->
+      <!-- rsvp details modal -->
       <div
         class="modal modal-fx-slideBottom modal-pos-bottom"
         :class="{ 'is-active': detailsModal }"
@@ -152,7 +152,7 @@
                   </div>
                 </div>
               </div>
-              <div v-show="rsvp.status !== 'Not Going'" class="column is-4">
+              <div v-show="!getStatusHidePax(rsvp.status)" class="column is-4">
                 <div class="field">
                   <label class="label">Pax</label>
                   <div class="control">
@@ -270,7 +270,7 @@ export default {
       this.scrollPos = window.scrollY;
     },
     ans(status) {
-      if (status === "Not Going") {
+      if (this.getStatusHidePax(status)) {
         this.rsvp.details.pax = 1;
       }
 
@@ -292,6 +292,11 @@ export default {
     getStatusClass(status) {
       return (
         this.rsvpOptions.find((e) => e.value === status)?.class || "is-light"
+      );
+    },
+    getStatusHidePax(status) {
+      return !!(
+        this.rsvpOptions.find((e) => e.value === status)?.hidePax 
       );
     },
   },

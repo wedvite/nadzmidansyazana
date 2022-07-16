@@ -1,12 +1,18 @@
 
 // Demo
-export const project = 'demo';
-export const projectTitle = 'Azim & Alia';
+export const project = 'hanisfadzil_spW7h1guWOh0DctRpkvFreI1zLq2';
+export const wishlistDoc = "hanisfadzil";
+export const projectTitle = 'Hanis & Fadzil';
 
 
 export const fireStore = {
     collection: "infos",
     doc: project === "demo" ? "_demo" : project
+};
+
+export const fireStoreWishlist = {
+    collection: "wishlist",
+    doc: project === "demo" ? "_demo" : wishlistDoc
 };
 
 export const themes = [
@@ -26,14 +32,14 @@ export const themes = [
 ];
 
 export const rsvpOptions = [
-    { value: 'Going', class: 'is-success', faIcon: 'smile-wink' },
-    { value: 'Maybe', class: 'is-link', faIcon: 'meh' },
-    { value: 'Not Going', class: 'is-warning', faIcon: 'frown' },
+    { value: 'Hadir', class: 'is-success', faIcon: 'smile-wink' },
+    // { value: 'Maybe', class: 'is-link', faIcon: 'meh' },
+    { value: 'Tidak Hadir', class: 'is-warning', faIcon: 'frown', hidePax: true },
 ];
 
 export const userData = require(`./_infos/client.json`);
 
 export const cfg = {
     name: project,
-    title: "Wedvite - " + projectTitle,
+    title: "Walimatulurus - " + projectTitle,
 }

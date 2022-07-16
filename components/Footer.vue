@@ -150,9 +150,8 @@
 </template>
 
 <script>
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 import ics from "~/plugins/ics";
-import { projectTitle } from "~/wedvite.config";
 import cloneDeep from "lodash.clonedeep";
 
 import { mapState } from "vuex";

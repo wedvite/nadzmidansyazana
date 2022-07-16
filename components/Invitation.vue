@@ -22,20 +22,27 @@
       </template>
     </div>
 
-    <div class="place">
-      <strong>{{i.lang === 'en' ? 'Place': 'Tempat'}}</strong>
-      <div v-html="i.address.exact_html"></div>
-    </div>
-
     <div class="date">
-      <strong>{{i.lang === 'en' ? 'Date': 'Tarikh'}}</strong>
-      <div>{{i.date.greg}}</div>
-      <div v-if="i.day">{{i.day}}</div>
+      <div class="heading-1">{{ i.lang === "en" ? "Date" : "Pada" }}</div>
+      <!-- <div class="intro-sub">on</div> -->
+      <div class="heading-2">{{ i.date.greg }}</div>
+      <div class="heading-2" v-if="i.day">{{ i.day }}</div>
     </div>
 
     <div class="time">
-      <strong>{{i.lang === 'en' ? 'Time': 'Masa'}}</strong>
-      <div>{{i.time.from}} - {{i.time.to}}</div>
+      <div class="heading-1">
+        {{ i.lang === "en" ? "Time" : "Masa" }}
+      </div>
+      <!-- <div class="intro-sub">at</div> -->
+      <div class="heading-2">{{i.time.from}} - {{i.time.to}}</div>
+    </div>
+
+    <div class="place">
+      <div class="heading-1">
+        {{ i.lang === "en" ? "Place" : "Bertempat di" }}
+      </div>
+      <!-- <div class="intro-sub">at</div> -->
+      <div class="heading-2" v-html="i.address.exact_html"></div>
     </div>
   </section>
 </template>
@@ -64,7 +71,7 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/var.scss";
 #invitation {
-  font-family: $secondary-font;
+  font-family: $primary-font;
   // text-transform: uppercase;
 }
 
@@ -76,6 +83,9 @@ export default {
 .intro {
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 .parents,
@@ -105,22 +115,39 @@ export default {
 .place,
 .date,
 .time {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 
-  & > div {
-    font-size: 0.85rem;
+  .heading-1 {
+    font-size: 0.9rem;
+  }
+
+  .heading-2 {
+    text-transform: uppercase;
+    font-family: $primary-font;
+    font-weight: bolder !important;
+    font-size: 1.2rem !important;
+    font-style: italic;
   }
 }
 </style>
 
-<style>
+<style lang="scss">
 .guest.available {
   display: block;
   margin: 1rem 0;
   text-transform: capitalize;
   font-weight: bold;
   font-size: 1.2rem;
+
+
+  &.guest-box {
+    padding: 0.5rem 1rem;
+    background: #4a4a4a;
+    border-radius: 10px;
+    border: 1px solid #4a4a4a;
+    word-wrap: break-word;
+  }
 }
 </style>
 

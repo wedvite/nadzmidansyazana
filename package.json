@@ -25,6 +25,7 @@
     "lodash.sortby": "^4.7.0",
     "nuxt": "^2.15.8",
     "nuxt-fontawesome": "^0.4.0",
+    "uuid": "^8.3.2",
     "vue": "^2.7.6",
     "vue-good-table": "^2.21.2",
     "vue-server-renderer": "^2.7.6"

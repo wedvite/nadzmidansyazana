@@ -84,3 +84,5 @@ sw.*
 
 info.js
 _clients/
+
+*.DS_Store

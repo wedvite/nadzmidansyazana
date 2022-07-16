@@ -2,9 +2,15 @@
 /*
 Default Font 
 */
-$font-url: "https://fonts.googleapis.com/css?family=Poppins:300|Bilbo+Swash+Caps|Nothing+You+Could+Do";
+@font-face {
+    font-family: 'MYRIADPRO';
+    src: local('MYRIADPRO'),
+        url(~assets/fonts/MYRIADPRO-REGULAR.woff) format('woff');
+}
+$font-url: 'https://fonts.googleapis.com/css?family=Tangerine:wght@700&display=swap|Cormorant+Infant:ital,wght@1,600|Bilbo+Swash+Caps';
 
-$primary-font: "Nothing You Could Do", cursive;
-$secondary-font: "Poppins", sans-serif;
-$countdown-font: "Bilbo Swash Caps", cursive;
-// $countdown-font: "Alex Brush", cursive;
+$cover-font: 'Tangerine', cursive;
+$primary-font: 'Cormorant Infant', serif;
+$secondary-font: 'MYRIADPRO', serif;
+$countdown-font: 'Bilbo Swash Caps', cursive;
+// $countdown-font: 'Alex Brush', cursive;

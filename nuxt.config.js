@@ -55,6 +55,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~assets/scss/main.scss',
     `~assets/scss/themes/${themeScssFile}`,
     '~assets/scss/modal.scss',
     'bulma-modal-fx/dist/css/modal-fx.min.css'

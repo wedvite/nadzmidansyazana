@@ -1,43 +1,47 @@
 {
-    "theme": "baby-blue-floral",
+    "theme": "custom",
     "lang": "ms",
-    "groom_or_bride_first": "groom",
+    "groom_or_bride_first": "bride",
     "groom": {
-        "fullname": "Abdul Azim Bin Azry",
-        "nickname": "Azim"
+        "fullname": "Muhammad Fadzil Bin Mohd Jusri",
+        "nickname": "Fadzil"
     },
     "bride": {
-        "fullname": "Alia Nadira binti Arif Asyraf",
-        "nickname": "Alia"
+        "fullname": "Nurhanis Binti Mohd Shukri",
+        "nickname": "Hanis"
     },
     "parents": {
         "father": {
-            "fullname": "Hj Mohd Azry Bin Nazmi",
-            "nickname": "Hj Mohd Azry"
+            "fullname": "Mohd Shukri bin Mat Nor",
+            "nickname": "Mohd Shukri"
         },
         "mother": {
-            "fullname": "Hidayatul Ain Binti Nik Shafiq",
-            "nickname": "Ain"
+            "fullname": "Siti Zubaidah binti Zainuddin",
+            "nickname": "Sit Zubaidah"
         }
     },
     "date": {
-        "greg": "14 Mac 2022",
-        "hijri": "2 Rejab 1440H"
+        "greg": "29 Oktober 2022",
+        "hijri": "4 Rabiulakhir 1444h"
     },
     "time": {
         "from": "11:30 AM",
         "to": "4:30 PM"
     },
     "address": {
-        "general": "The Curve",
-        "exact_html": "6, Jalan PJU 7/3, Mutiara Damansara, 47800 Petaling Jaya, Selangor",
-        "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.7604347779384!2d101.60927851456906!3d3.157741453980817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f2b8a436a75%3A0x4902dbd453b4457c!2sThe+Curve!5e0!3m2!1sen!2smy!4v1550287047910\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-        "gmaps_link": "https://goo.gl/maps/JPcpokCTNy92",
-        "waze_link": "https://www.waze.com/ul?ll=3.15773610%2C101.61146720&navigate=yes&zoom=16"
+        "general": "E14 Felda Sendayan, <br>Seremban",
+        "exact_html": "E14 Felda Sendayan, 71950 Seremban, Negeri Sembilan",
+        "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.3685812309375!2d101.84726730226927!3d2.6739000000000135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x994e748f3b240f55!2zMsKwNDAnMjYuMCJOIDEwMcKwNTAnNTIuMCJF!5e0!3m2!1sen!2smy!4v1657979741871!5m2!1sen!2smy\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+        "gmaps_link": "https://maps.app.goo.gl/SgegdrYxF8Cknh167",
+        "waze_link": "https://waze.com/ul/hw22rjwg7c?&navigate=yes&zoom=16"
     },
-    "countdown_end": "2030-03-20 11:30 AM",
+    "countdown_end": "2022-10-29 11:30 AM",
+    "invitation_section": {
+        "text": "Dengan Segala Hormatnya Kami Menjemput <br>Dato'/Datin/Tuan/Puan/Encik/Cik <div class='guest guest-box'><br><\/div>Ke Majlis Perkahwinan Puteri Kami"
+        
+    },
     "tentative_section": {
-        "title": "Tentatif",
+        "title": "TENTATIF",
         "style": "col",
         "tentatives": [
             {
@@ -55,19 +59,12 @@
         ]
     },
     "social_section": {
-        "ig_tags": "GroomXBride",
-        "fb_page": {
-            "title": "Walimatulurus Azim & Alia",
-            "link": "https://www.facebook.com/events/583198235197973/"
-        },
+        "ig_tags": "HanisNgoratFadzil",
+        "carouselAutoplay": false,
         "images": [
             {
                 "src": "./images/sample-1.jpg",
                 "htmlTitle": "Hey sayangku!"
-            },
-            {
-                "src": "./images/sample-1.jpg",
-                "htmlTitle": "Life <span class='has-text-success'>Zzzz</span>"
             }
         ]
     },
