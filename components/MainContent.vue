@@ -3,42 +3,71 @@
     id="main-content"
     class="hero is-fullheight"
     :class="[
-      'bg-' + i.theme, 
-      'bg-image-' + i.theme, 
-      i.main_section && i.main_section.text_transform ? i.main_section.text_transform: 'is-capitalized'
+      'bg-' + i.theme,
+      'bg-image-' + i.theme,
+      i.main_section && i.main_section.text_transform
+        ? i.main_section.text_transform
+        : 'is-capitalized',
     ]"
   >
     <div class="hero-body">
       <div v-if="!i.override_main" class="container has-text-centered">
-        <div :class="'title-' + i.theme">{{i.main_section.title}}</div>
+        <div data-aos="zoom-in" data-aos-offset="0" :class="'title-' + i.theme">
+          {{ i.main_section.title }}
+        </div>
 
         <div
           class="couples"
           :class="[
-          'couples-' + i.theme,
-          i.groom_or_bride_first === 'bride' ? 'reverse': '',
-          i.main_section && i.main_section.couples_text_transform ? i.main_section.couples_text_transform : ''
-          
-        ]"
+            'couples-' + i.theme,
+            i.groom_or_bride_first === 'bride' ? 'reverse' : '',
+            i.main_section && i.main_section.couples_text_transform
+              ? i.main_section.couples_text_transform
+              : '',
+          ]"
         >
-          <template v-if="i.main_section.name_type === 'fullname'">
-            <div>{{i.groom.fullname}}</div>
-            <div class="amp">&amp;</div>
-            <div>{{i.bride.fullname}}</div>
-          </template>
-          <template v-else>
-            <div>{{i.groom.nickname}}</div>
-            <div class="amp">&amp;</div>
-            <div>{{i.bride.nickname}}</div>
-          </template>
+          <div
+            :data-aos="
+              i.groom_or_bride_first === 'bride'
+                ? 'fade-left'
+                : 'fade-right'
+            "
+            data-aos-offset="0"
+            data-aos-duration="1000"
+          >
+            {{ i.groom[i.main_section.name_type] }}
+          </div>
+          <div data-aos="zoom-in" class="amp">&amp;</div>
+          <div
+            :data-aos="
+              i.groom_or_bride_first === 'groom'
+                ? 'fade-left'
+                : 'fade-right'
+            "
+            data-aos-offset="0"
+            data-aos-duration="1000"
+          >
+            {{ i.bride[i.main_section.name_type] }}
+          </div>
         </div>
 
-        <div class="dates" :class="'dates-' + i.theme">
-          <div class="date-gregorian">{{i.date.greg}}</div>
-          <div v-if="i.date.hijri" class="date-hijri">{{i.date.hijri}}</div>
+        <div
+          data-aos="zoom-in"
+          data-aos-offset="0"
+          class="dates"
+          :class="'dates-' + i.theme"
+        >
+          <div class="date-gregorian">{{ i.date.greg }}</div>
+          <div v-if="i.date.hijri" class="date-hijri">{{ i.date.hijri }}</div>
         </div>
 
-        <div class="venue" :class="'venue-' + i.theme" v-html="i.address.general"></div>
+        <div
+          data-aos="zoom-in"
+          data-aos-offset="0"
+          class="venue"
+          :class="'venue-' + i.theme"
+          v-html="i.address.general"
+        ></div>
       </div>
     </div>
   </section>
@@ -49,9 +78,9 @@ import { mapState } from "vuex";
 export default {
   computed: {
     ...mapState({
-      i: state => state.info
-    })
-  }
+      i: (state) => state.info,
+    }),
+  },
 };
 </script>
 
@@ -76,18 +105,18 @@ export default {
 //   margin-bottom: 3rem;
 // }
 
-
 .couples {
   display: flex;
   flex-direction: column;
   font-family: $cover-font;
-  
+
   &.reverse {
     flex-direction: column-reverse;
   }
 }
 
-.date-gregorian, .venue {
+.date-gregorian,
+.venue {
   font-family: $primary-font;
 }
 </style>

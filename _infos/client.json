@@ -1,119 +1,112 @@
 {
-    "theme": "custom",
-    "lang": "ms",
-    "groom_or_bride_first": "bride",
-    "groom": {
-        "fullname": "Muhammad Fadzil Bin Mohd Jusri",
-        "nickname": "Fadzil"
-    },
-    "bride": {
-        "fullname": "Nurhanis Binti Mohd Shukri",
-        "nickname": "Hanis"
-    },
-    "parents": {
-        "father": {
-            "fullname": "Mohd Shukri bin Mat Nor",
-            "nickname": "Mohd Shukri"
-        },
-        "mother": {
-            "fullname": "Siti Zubaidah binti Zainuddin",
-            "nickname": "Sit Zubaidah"
-        }
-    },
-    "date": {
-        "greg": "29 Oktober 2022",
-        "hijri": "4 Rabiulakhir 1444h"
-    },
-    "time": {
-        "from": "11:30 AM",
-        "to": "4:30 PM"
-    },
-    "address": {
-        "general": "E14 Felda Sendayan, <br>Seremban",
-        "exact_html": "E14 Felda Sendayan, 71950 Seremban, Negeri Sembilan",
-        "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.3685812309375!2d101.84726730226927!3d2.6739000000000135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x994e748f3b240f55!2zMsKwNDAnMjYuMCJOIDEwMcKwNTAnNTIuMCJF!5e0!3m2!1sen!2smy!4v1657979741871!5m2!1sen!2smy\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-        "gmaps_link": "https://maps.app.goo.gl/SgegdrYxF8Cknh167",
-        "waze_link": "https://waze.com/ul/hw22rjwg7c?&navigate=yes&zoom=16"
-    },
-    "countdown_end": "2022-10-29 11:30 AM",
-    "invitation_section": {
-        "text": "Dengan Segala Hormatnya Kami Menjemput <br>Dato'/Datin/Tuan/Puan/Encik/Cik <div class='guest guest-box'><br><\/div>Ke Majlis Perkahwinan Puteri Kami"
-        
-    },
-    "tentative_section": {
-        "title": "TENTATIF",
-        "style": "col",
-        "tentatives": [
-            {
-                "time": "11:30 AM",
-                "details": "Majlis Bermula"
-            },
-            {
-                "time": "12:30 PM",
-                "details": "Ketibaan Pengantin"
-            },
-            {
-                "time": "4:30 PM",
-                "details": "Majlis Berakhir"
-            }
-        ]
-    },
-    "social_section": {
-        "ig_tags": "HanisNgoratFadzil",
-        "ig_signature": null,
-        "carouselAutoplay": false,
-        "images": [
-            {
-                "src": "./images/sample-1.jpg",
-                "htmlTitle": "Hey sayangku!"
-            }
-        ]
-    },
-    "contact_section": {
-        "override_icons_color": true,
-        "contacts": [
-            {
-                "name": "Shukri",
-                "rel": "Ayah",
-                "tel": 60199654231,
-                "whatsapp": true
-            },
-            {
-                "name": "Zubaidah",
-                "rel": "Mak",
-                "tel": 601151416709,
-                "whatsapp": true
-            },
-            {
-                "name": "Syuhada",
-                "rel": "Adik",
-                "tel": 601111528414,
-                "whatsapp": true
-            },
-            {
-                "name": "Luqman",
-                "rel": "Adik",
-                "tel": 60106644025,
-                "whatsapp": true
-            },
-            {
-                "name": "Husna",
-                "rel": "Adik",
-                "tel": 60176314473,
-                "whatsapp": true
-            },
-            {
-                "name": "Mustaqim",
-                "rel": "Adik",
-                "tel": 601139766806,
-                "whatsapp": true
-            }
-        ]
-    },
-    "ics": {
-        "enabled": 1,
-        "subject": "Walimatulurus - Azim & Alia",
-        "begin": "1/31/2022 10:00 am",
-        "end": "1/31/2022 11:00 am"
-    }
+  "theme": "custom",
+  "lang": "ms",
+  "groom_or_bride_first": "bride",
+  "groom": {
+    "fullname": "Muhammad Fadzil Bin Mohd Jusri",
+    "nickname": "Fadzil"
+  },
+  "bride": {
+    "fullname": "Nurhanis Binti Mohd Shukri",
+    "nickname": "Hanis"
+  },
+  "parents": {
+    "name": "Mohd Shukri bin Mat Nor",
+    "andWith": "Siti Zubaidah binti Zainuddin"
+  },
+  "date": {
+    "greg": "29 Oktober 2022",
+    "hijri": "4 Rabiulakhir 1444h"
+  },
+  "time": {
+    "from": "11:30 AM",
+    "to": "4:30 PM"
+  },
+  "address": {
+    "general": "E14 Felda Sendayan, <br>Seremban",
+    "exact_html": "E14 Felda Sendayan, 71950 Seremban, Negeri Sembilan",
+    "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.3685812309375!2d101.84726730226927!3d2.6739000000000135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x994e748f3b240f55!2zMsKwNDAnMjYuMCJOIDEwMcKwNTAnNTIuMCJF!5e0!3m2!1sen!2smy!4v1657979741871!5m2!1sen!2smy\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+    "gmaps_link": "https://maps.app.goo.gl/SgegdrYxF8Cknh167",
+    "waze_link": "https://waze.com/ul/hw22rjwg7c?&navigate=yes&zoom=16"
+  },
+  "countdown_end": "2022-10-29 11:30 AM",
+  "invitation_section": {
+    "text": "Dengan Segala Hormatnya Kami Menjemput <br>Dato'/Datin/Tuan/Puan/Encik/Cik <div class='guest guest-box'><br><\/div>Ke Majlis Perkahwinan Puteri Kami"
+  },
+  "tentative_section": {
+    "title": "TENTATIF",
+    "style": "col",
+    "tentatives": [
+      {
+        "time": "11:30 AM",
+        "details": "Majlis Bermula"
+      },
+      {
+        "time": "12:30 PM",
+        "details": "Ketibaan Pengantin"
+      },
+      {
+        "time": "4:30 PM",
+        "details": "Majlis Berakhir"
+      }
+    ]
+  },
+  "social_section": {
+    "ig_tags": "HanisNgoratFadzil",
+    "ig_signature": null,
+    "carouselAutoplay": false,
+    "images": [
+      {
+        "src": "./images/sample-1.jpg",
+        "htmlTitle": "Hey sayangku!"
+      }
+    ]
+  },
+  "contact_section": {
+    "override_icons_color": true,
+    "contacts": [
+      {
+        "name": "Shukri",
+        "rel": "Ayah",
+        "tel": 60199654231,
+        "whatsapp": true
+      },
+      {
+        "name": "Zubaidah",
+        "rel": "Mak",
+        "tel": 601151416709,
+        "whatsapp": true
+      },
+      {
+        "name": "Syuhada",
+        "rel": "Adik",
+        "tel": 601111528414,
+        "whatsapp": true
+      },
+      {
+        "name": "Luqman",
+        "rel": "Adik",
+        "tel": 60106644025,
+        "whatsapp": true
+      },
+      {
+        "name": "Husna",
+        "rel": "Adik",
+        "tel": 60176314473,
+        "whatsapp": true
+      },
+      {
+        "name": "Mustaqim",
+        "rel": "Adik",
+        "tel": 601139766806,
+        "whatsapp": true
+      }
+    ]
+  },
+  "ics": {
+    "enabled": 1,
+    "subject": "Walimatulurus - Hanis & Fadzil",
+    "begin": "10/29/2022 11:30 am",
+    "end": "10/29/2022 4:30 pm"
+  }
 }

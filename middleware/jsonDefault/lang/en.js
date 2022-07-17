@@ -41,14 +41,14 @@ export const INFO_EN = {
     "ig_signature": "Our Wedding Signature",
     "carouselAutoplay": true,
     "images": [
-      {
-        "src": "./images/sample-1.jpg",
-        "htmlTitle": "Hey sayangku!"
-      },
-      {
-        "src": "./images/sample-2.jpg",
-        "htmlTitle": "Hey sayangku!"
-      }
+      // {
+      //   "src": "./images/sample-1.jpg",
+      //   "htmlTitle": "Hey sayangku!"
+      // },
+      // {
+      //   "src": "./images/sample-2.jpg",
+      //   "htmlTitle": "Hey sayangku!"
+      // }
     ]
   },
   "contact_section": {},

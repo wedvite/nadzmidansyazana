@@ -39,10 +39,12 @@ module.exports = {
       { name: 'author', content: 'Fadzil Jusri' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: `/favicon.ico` }
+      { rel: 'icon', type: 'image/x-icon', href: `/favicon.ico` },
+      { rel: 'stylesheet', href: 'https://unpkg.com/aos@next/dist/aos.css' }
     ],
     script: [
       // {src: '~/plugins/ics.deps.min', type: "text/javascript"}
+      { src: 'https://unpkg.com/aos@next/dist/aos.js', type: "text/javascript" }
     ]
   },
 

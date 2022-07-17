@@ -19,7 +19,7 @@
           :key="index"
           class="level-item has-text-centered"
         >
-          <div>
+          <div data-aos="flip-down" data-aos-duration="1000">
             <p class="title">{{ countRsvpStatus(opt.value) }}</p>
             <p class="heading" :class="'txt-dark-' + theme">{{ opt.value }}</p>
           </div>
@@ -32,9 +32,11 @@
       >
         <div v-if="!endDate" class="buttons is-centered no-select">
           <button
+            data-aos="zoom-in"
             class="button is-rounded is-large"
             :class="'bg-' + theme"
             @click.prevent="statusModal = !statusModal"
+            style="min-width: 130px"
           >
             <span class="text-confirm is-size-6">
               {{ myRsvp.status ? `${rsvp_section.updateRsvpText} ` : "" }}
@@ -44,6 +46,7 @@
         </div>
         <div v-if="myRsvp.status">
           <div
+            data-aos="zoom-in"
             class="field is-grouped is-grouped-multiline is-grouped-centered"
           >
             <div class="control">
@@ -63,7 +66,11 @@
             </div>
           </div>
 
-          <article v-if="myRsvp.details.wishes" class="message">
+          <article
+            data-aos="zoom-in"
+            v-if="myRsvp.details.wishes"
+            class="message"
+          >
             <div class="message-body">
               <strong>Wishes:</strong>
               {{ myRsvp.details.wishes }}
@@ -74,6 +81,7 @@
 
       <!-- Guestbook -->
       <h1
+        data-aos="fade-right"
         v-show="dbRsvp.length"
         class="is-size-4 has-text-weight-bold recent-comments"
         :class="'txt-dark-' + theme"
@@ -83,7 +91,7 @@
       <article class="media" v-for="(i, index) in sortedRsvp" :key="index">
         <div class="media-content">
           <div class="content is-marginless">
-            <div>
+            <div data-aos="fade-right">
               <strong>{{ i.details.name }}</strong>
               <small v-if="i.details.formattedDate"
                 >@ {{ i.details.formattedDate }}</small
@@ -96,7 +104,11 @@
         </div>
       </article>
 
-      <div v-if="dbRsvp.length" class="buttons is-centered more">
+      <div
+        data-aos="zoom-in"
+        v-if="dbRsvp.length"
+        class="buttons is-centered more"
+      >
         <a class="has-text-link pointer" href="./rsvp/">All RSVP</a>
       </div>
 
@@ -213,8 +225,7 @@
 <script>
 import { rsvpOptions } from "~/wedvite.config";
 
-import _sortBy from "lodash.sortby";
-import cloneDeep from "lodash.clonedeep";
+import { cloneDeep, sortBy } from "lodash";
 import { mapState, mapGetters } from "vuex";
 export default {
   data() {
@@ -243,7 +254,7 @@ export default {
     }),
     ...mapGetters(["countRsvpStatus"]),
     sortedRsvp() {
-      return _sortBy(this.dbRsvp, "details.unix").reverse().slice(0, 10);
+      return sortBy(this.dbRsvp, "details.unix").reverse().slice(0, 10);
     },
     isValid() {
       return Boolean(this.rsvp.details.name && this.rsvp.details.pax > 0);
@@ -295,9 +306,7 @@ export default {
       );
     },
     getStatusHidePax(status) {
-      return !!(
-        this.rsvpOptions.find((e) => e.value === status)?.hidePax 
-      );
+      return !!this.rsvpOptions.find((e) => e.value === status)?.hidePax;
     },
   },
   // watch: {

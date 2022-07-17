@@ -1,7 +1,7 @@
 import { fireStore as conf } from "~/wedvite.config";
 import { fireDb } from "~/plugins/firebase";
 import { v4 as uuidv4 } from 'uuid';
-import _merge from "lodash.merge";
+import { merge } from "lodash";
 
 import { INFO_MS, INFO_EN } from "@/middleware/jsonDefault/lang";
 
@@ -60,8 +60,8 @@ export const actions = {
 
     let mergedInfo;
     if (info && info.lang.toLowerCase() === "en")
-      mergedInfo = _merge(INFO_EN, info);
-    else mergedInfo = _merge(INFO_MS, info);
+      mergedInfo = merge(INFO_EN, info);
+    else mergedInfo = merge(INFO_MS, info);
 
     commit("SET_INFO", mergedInfo);
   },

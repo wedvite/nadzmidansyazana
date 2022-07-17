@@ -1,8 +1,22 @@
 <template>
   <div>
-      <nuxt/>
+    <nuxt />
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    this.$nextTick(function () {
+      try {
+        AOS.init({ duration: 600, offset: 160 });
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  },
+};
+</script>
 
 <style>
 html {

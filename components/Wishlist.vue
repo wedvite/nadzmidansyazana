@@ -1,6 +1,7 @@
 <template>
   <section id="wishlist" class="section">
     <div
+      data-aos="zoom-in"
       v-if="!hideTitle"
       class="main-title has-text-centered"
       :class="'txt-dark-' + theme"
@@ -8,7 +9,11 @@
       Wishlist
     </div>
 
-    <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+    <table
+      data-aos="flip-up"
+      data-aos-offset="200"
+      class="table is-bordered is-narrow is-hoverable is-fullwidth"
+    >
       <thead>
         <tr>
           <th class="has-background-light" style="width: 50%">ITEM</th>
@@ -33,14 +38,13 @@
           </td>
         </tr>
         <tr v-if="!filteredWishlist.length && !isLoading">
-          <td colspan="2" class="has-text-centered">
-            No data found!
-          </td>
+          <td colspan="2" class="has-text-centered">No data found!</td>
         </tr>
       </tbody>
     </table>
 
     <div
+      data-aos="zoom-in"
       v-if="wishlist.length > filteredWishlist.length"
       class="buttons is-centered more"
     >
@@ -113,7 +117,7 @@
 
 <script>
 import { mapState } from "vuex";
-import cloneDeep from "lodash.clonedeep";
+import { cloneDeep } from "lodash";
 
 export default {
   props: {

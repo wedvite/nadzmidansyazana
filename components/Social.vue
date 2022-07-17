@@ -2,12 +2,12 @@
   <section id="social-section" class="section">
     <div class="social">
       <div class="level is-mobile" v-if="s.ig_tags">
-        <div class="level-item is-narrow">
+        <div data-aos="fade-right" class="level-item is-narrow">
           <figure>
             <img src="~assets/icons/ig.png" width="30" />
           </figure>
         </div>
-        <div class="level-item">
+        <div data-aos="fade-left" class="level-item">
           <p>
             <span class="tag-heading tag-title">
               <a
@@ -26,12 +26,12 @@
         </div>
       </div>
       <div class="level is-mobile" v-if="s.fb_page">
-        <div class="level-item is-narrow">
+        <div data-aos="fade-right" class="level-item is-narrow">
           <figure>
             <img src="~assets/icons/fb.png" width="30" />
           </figure>
         </div>
-        <div class="level-item">
+        <div data-aos="fade-left" class="level-item">
           <p>
             <span class="tag-heading tag-title">
               <a
@@ -47,6 +47,7 @@
     </div>
 
     <div
+      data-aos="zoom-in"
       v-if="s.images && s.images.length"
       :data-autoplay="s.carouselAutoplay === false ? false : true"
       class="carousel carousel-animated carousel-animate-slide"
