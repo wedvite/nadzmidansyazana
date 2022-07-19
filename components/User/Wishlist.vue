@@ -269,6 +269,17 @@ export default {
           },
           []
         );
+
+        if (!self.importedWishlistData.length) {
+          self.$swal.fire({
+            position: "top-end",
+            icon: "error",
+            text: "No wishlist item found from imported file! Please ensure file is following correct column format. (WISHLIST)",
+            // showConfirmButton: false,
+            // timer: 3000,
+          });
+          return
+        }
         self.addWishlistModal = true;
         self.$refs.fileupload.value = null;
       };
