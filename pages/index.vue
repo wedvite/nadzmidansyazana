@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import "bulma-modal-fx/dist/js/modal-fx.min";
 import { userData as data, themes } from "~/wedvite.config.js";
 
 import MainContent from "~/components/MainContent";

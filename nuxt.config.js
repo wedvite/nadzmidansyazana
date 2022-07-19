@@ -45,7 +45,6 @@ module.exports = {
     script: [
       // {src: '~/plugins/ics.deps.min', type: "text/javascript"}
       { src: 'https://unpkg.com/aos@next/dist/aos.js', type: "text/javascript" },
-      { src: 'bulma-modal-fx/dist/js/modal-fx.min', type: "text/javascript" }
     ]
   },
 
