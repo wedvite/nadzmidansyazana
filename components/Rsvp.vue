@@ -169,12 +169,56 @@
                 <div class="field">
                   <label class="label">Pax</label>
                   <div class="control">
-                    <input
+                    <div
+                      class="dropdown"
+                      :class="{ 'is-active': showPaxDropdown }"
+                      style="width: 100%"
+                    >
+                      <div class="dropdown-trigger" style="width: 100%">
+                        <button
+                          class="button is-rounded"
+                          aria-haspopup="true"
+                          aria-controls="dropdown-menu"
+                          style="width: 100%; justify-content: start"
+                          @click="showPaxDropdown = true"
+                        >
+                          <span>{{ rsvp.details.pax }}</span>
+                          <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="dropdown-menu"
+                        id="dropdown-menu"
+                        role="menu"
+                        style="min-width: 100%"
+                      >
+                        <div
+                          class="dropdown-content"
+                          style="max-height: 150px; overflow: scroll"
+                        >
+                          <a
+                            v-for="i in 3"
+                            :key="i"
+                            class="dropdown-item"
+                            :class="{ 'is-active': i == rsvp.details.pax }"
+                            @click="
+                              rsvp.details.pax = i;
+                              showPaxDropdown = false;
+                            "
+                          >
+                            {{ i }}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <input
                       class="input is-rounded"
                       type="number"
                       v-model="rsvp.details.pax"
                       placeholder="Pax"
-                    />
+                    /> -->
                   </div>
                 </div>
               </div>
@@ -233,6 +277,7 @@ export default {
     return {
       statusModal: false,
       detailsModal: false,
+      showPaxDropdown: false,
       rsvp: {
         status: "",
         details: {
@@ -310,19 +355,11 @@ export default {
       return !!this.rsvpOptions.find((e) => e.value === status)?.hidePax;
     },
   },
-  // watch: {
-  //   statusModal(val) {
-  //     if (!val)
-  //       this.rsvp = {
-  //         status: "",
-  //         details: {
-  //           name: "",
-  //           pax: 1,
-  //           wishes: "",
-  //         },
-  //       };
-  //   },
-  // },
+  watch: {
+    statusModal(val) {
+      if (!val) this.showPaxDropdown = false;
+    },
+  },
 };
 </script>
 
