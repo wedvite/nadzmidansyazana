@@ -93,10 +93,10 @@
           <div class="content is-marginless">
             <div data-aos="fade-right">
               <strong>{{ i.details.name }}</strong>
-              <small v-if="i.details.formattedDate"
-                >@ {{ i.details.formattedDate }}</small
-              >
-              <div v-if="i.details.wishes" style="word-break: break-word">
+              <small v-if="i.details.formattedDate">
+                @ {{ i.details.formattedDate }}
+              </small>
+              <div v-if="i.details.wishes" style="word-wrap: break-word">
                 {{ i.details.wishes }}
               </div>
             </div>
@@ -106,10 +106,11 @@
 
       <div
         data-aos="zoom-in"
+        data-aos-offset="100"
         v-if="dbRsvp.length"
         class="buttons is-centered more"
       >
-        <a class="has-text-link pointer" href="./rsvp/">All RSVP</a>
+        <a class="has-text-link pointer no-select" href="./rsvp/">All RSVP</a>
       </div>
 
       <!-- rsvp status -->
@@ -336,8 +337,7 @@ export default {
 section,
 .text-confirm,
 .label,
-.title,
-.modal-content {
+.title {
   color: unset !important;
 }
 

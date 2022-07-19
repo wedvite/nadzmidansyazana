@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import "bulma-modal-fx/dist/js/modal-fx.min";
 import { userData as data, themes } from "~/wedvite.config.js";
 
 import MainContent from "~/components/MainContent";
@@ -72,6 +71,15 @@ export default {
 <style lang="scss">
 @import "~assets/scss/var.scss";
 @import url($font-url);
+
+#wedvite {
+  margin-bottom: 3rem;
+  overflow-x: hidden !important;
+
+  .modal {
+    max-width: 520px;
+  }
+}
 
 .container {
   width: 100%;

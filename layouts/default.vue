@@ -29,6 +29,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
 }
 
 *,
@@ -36,5 +38,10 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+body {
+  font-size: 1rem !important;
+  font-weight: normal !important;
 }
 </style>

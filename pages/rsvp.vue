@@ -23,6 +23,7 @@
       </div>
     </nav>
     <vue-good-table
+      id="rsvp-table"
       :columns="columns"
       :rows="dbRsvp"
       :line-numbers="true"
@@ -61,7 +62,7 @@ export default {
         position: "bottom",
         nextLabel: "next",
         prevLabel: "prev",
-        rowsPerPageLabel: "Rows per page",
+        rowsPerPageLabel: "Per page",
         ofLabel: "of",
         pageLabel: "page", // for 'pages' mode
       },
@@ -168,12 +169,14 @@ export default {
 };
 </script>
 
-<style>
-.wishes-col {
-  min-width: 300px;
-}
-.name-col {
-  min-width: 150px;
+<style lang="scss">
+#rsvp-table {
+  .wishes-col {
+    min-width: 300px;
+  }
+  .name-col {
+    min-width: 150px;
+  }
 }
 </style>
 

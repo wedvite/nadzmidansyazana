@@ -1,15 +1,3 @@
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 3rem;
-  font-size: 1rem !important;
-  font-weight: normal !important;
-  overflow-x: hidden !important;
-}
-
 .no-select {
   outline: 0 !important;
   // border: none !important;
@@ -33,4 +21,8 @@ a,
   box-shadow: none !important;
   // border: none !important;
   border-color: unset !important;
+}
+
+.is-fullwidth {
+  width: 100%;
 }

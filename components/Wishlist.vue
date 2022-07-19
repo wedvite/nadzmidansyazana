@@ -48,10 +48,12 @@
       v-if="wishlist.length > filteredWishlist.length"
       class="buttons is-centered more"
     >
-      <a class="has-text-link pointer" href="./wishlist/">All Wishlist</a>
+      <a class="has-text-link pointer no-select" href="./wishlist/">
+        All Wishlist
+      </a>
     </div>
 
-    <!-- sposor modal -->
+    <!-- sponsor modal -->
     <div
       v-if="wishlist.length && wishlist[selectedListIndex]"
       class="modal modal-fx-slideBottom modal-pos-bottom"
@@ -219,8 +221,7 @@ export default {
 section,
 .text-confirm,
 .label,
-.title,
-.modal-content {
+.title {
   color: unset !important;
 }
 

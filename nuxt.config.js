@@ -44,7 +44,8 @@ module.exports = {
     ],
     script: [
       // {src: '~/plugins/ics.deps.min', type: "text/javascript"}
-      { src: 'https://unpkg.com/aos@next/dist/aos.js', type: "text/javascript" }
+      { src: 'https://unpkg.com/aos@next/dist/aos.js', type: "text/javascript" },
+      { src: 'bulma-modal-fx/dist/js/modal-fx.min', type: "text/javascript" }
     ]
   },
 
@@ -66,7 +67,8 @@ module.exports = {
   /*
   */
   plugins: [
-    // "~/plugins/bulma-modal-fx"
+    // "~/plugins/bulma-modal-fx",
+    "~/plugins/auth"
   ],
 
   /*
@@ -93,7 +95,8 @@ module.exports = {
             'faSmileWink',
             'faFrown',
             'faMeh',
-            'faComments'
+            'faComments',
+            'faUpload'
           ]
         },
         {
@@ -101,7 +104,15 @@ module.exports = {
           icons: ['faWhatsapp', 'faTelegramPlane']
         }
       ]
-    }]
+    }],
+    [
+      'vue-sweetalert2/nuxt',
+      {
+        confirmButtonColor: '#48c78e',
+        // cancelButtonColor: '#f14668',
+        reverseButtons: true
+      }
+    ]
   ],
   /*
   ** Axios module configuration
@@ -109,7 +120,6 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
 
   /*
   ** Build configuration

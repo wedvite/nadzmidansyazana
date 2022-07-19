@@ -1,6 +1,8 @@
 import { fireStoreWishlist as conf } from "~/wedvite.config";
+import firebase from "firebase/app";
 import { fireDb } from "~/plugins/firebase";
-import { orderBy } from "lodash";
+import { makeid } from '~/helpers/random';
+import { orderBy, pickBy } from "lodash";
 
 export const state = () => ({
   list: [],
@@ -27,15 +29,40 @@ export const actions = {
         .collection(conf.collection)
         .doc(conf.doc)
         .update({
-          [`list.${list.id}`]: list
+          [`list.${list.id}`]: pickBy(list)
         })
     }
+  },
+  importWishlist({ }, wishlist = []) {
+    const updated = {}
+    wishlist.forEach(list => {
+      const id = makeid();
+      updated[`list.${id}`] = {
+        ...list,
+        id,
+      }
+    });
+
+    console.log({ updated });
+
+    fireDb
+      .collection(conf.collection)
+      .doc(conf.doc)
+      .update(updated)
+  },
+  deleteList({ }, id) {
+    fireDb
+      .collection(conf.collection)
+      .doc(conf.doc)
+      .update({
+        [`list.${id}`]: firebase.firestore.FieldValue.delete()
+      })
   }
 }
 
 export const mutations = {
   SET_WISHLIST(state, data) {
-    state.list = orderBy(data, ['sponsoredBy'], ['desc']);
+    state.list = orderBy(data, ['sponsoredBy', 'item'], ['desc', 'asc']);
   },
   SET_LOADING(state, val) {
     state.loading = val;

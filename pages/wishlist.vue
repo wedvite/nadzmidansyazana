@@ -22,13 +22,3 @@ export default {
   components: { Wishlist },
 };
 </script>
-
-<style lang="scss">
-#wishlist-page {
-  #wishlist {
-    .modal {
-      max-width: 100% !important;
-    }
-  }
-}
-</style>

@@ -1,6 +1,6 @@
 import { fireStore as conf } from "~/wedvite.config";
 import { fireDb } from "~/plugins/firebase";
-import { v4 as uuidv4 } from 'uuid';
+import { makeid } from '~/helpers/random';
 import { merge } from "lodash";
 
 import { INFO_MS, INFO_EN } from "@/middleware/jsonDefault/lang";
@@ -54,7 +54,7 @@ export const actions = {
       .doc(conf.doc)
       .onSnapshot(doc => {
         doc = doc.data();
-        // console.log("Current data: ", doc);
+        console.log("Current data: ", doc);
         if (doc?.rsvp) commit("SET_RSVP", Object.values(doc.rsvp));
       });
 
@@ -75,7 +75,7 @@ export const actions = {
 
     if (!newRsvp?.id) {
       // New record
-      newRsvp.id = uuidv4();
+      newRsvp.id = makeid();
     } 
     // console.log({ newRsvp });
 
