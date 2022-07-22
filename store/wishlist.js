@@ -24,14 +24,16 @@ export const actions = {
       });
   },
   updateList({ }, list) {
-    if (list?.id) {
-      fireDb
-        .collection(conf.collection)
-        .doc(conf.doc)
-        .update({
-          [`list.${list.id}`]: pickBy(list)
-        })
+    if (!list?.id) {
+      list.id = makeid();
     }
+
+    fireDb
+      .collection(conf.collection)
+      .doc(conf.doc)
+      .update({
+        [`list.${list.id}`]: pickBy(list)
+      })
   },
   importWishlist({ }, wishlist = []) {
     const updated = {}
@@ -43,19 +45,24 @@ export const actions = {
       }
     });
 
-    console.log({ updated });
-
     fireDb
       .collection(conf.collection)
       .doc(conf.doc)
       .update(updated)
   },
   deleteList({ }, id) {
+    let key;
+    if (!id) {
+      key = 'list' // DELETE ALL!
+    } else {
+      key = `list.${id}`;
+    }
+
     fireDb
       .collection(conf.collection)
       .doc(conf.doc)
       .update({
-        [`list.${id}`]: firebase.firestore.FieldValue.delete()
+        [key]: firebase.firestore.FieldValue.delete()
       })
   }
 }

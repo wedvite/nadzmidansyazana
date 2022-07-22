@@ -11,22 +11,49 @@
       styleClass="vgt-table condensed bordered"
     >
       <template slot="table-actions">
-        <div class="file is-small" style="padding: 0.5rem">
-          <label class="file-label">
-            <input
-              ref="fileupload"
-              class="file-input"
-              type="file"
-              accept=".xlsx, .xls, .csv"
-              @change="onFileChange"
-            />
-            <span class="file-cta">
-              <span class="file-icon">
-                <fa icon="upload" />
-              </span>
-              <span class="file-label"> Import (.csv) </span>
-            </span>
-          </label>
+        <div class="field is-grouped" style="padding: 0.5rem">
+          <div class="control">
+            <div class="file is-small">
+              <label class="file-label">
+                <input
+                  ref="fileupload"
+                  class="file-input"
+                  type="file"
+                  accept=".xlsx, .xls, .csv"
+                  @change="onFileChange"
+                />
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <fa icon="upload" />
+                  </span>
+                  <span class="file-label"> Import (.csv) </span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="control">
+            <button
+              class="button is-success is-small"
+              @click.prevent.stop="
+                openUpdateModal({
+                  item: '',
+                  sponsoredBy: '',
+                })
+              "
+            >
+              Add
+            </button>
+          </div>
+
+          <div class="control">
+            <button
+              class="button is-danger is-small"
+              @click.prevent.stop="deleteAllWishList()"
+            >
+              Clear All
+            </button>
+          </div>
         </div>
       </template>
 
@@ -34,13 +61,13 @@
         <span v-if="props.column.field == 'action'">
           <button
             class="button is-link is-small"
-            @click.prevent="openUpdateModal(props.row)"
+            @click.prevent.stop="openUpdateModal(props.row)"
           >
             Update
           </button>
           <button
             class="button is-danger is-small"
-            @click.prevent="deleteList(props.row)"
+            @click.prevent.stop="deleteList(props.row)"
           >
             Delete
           </button>
@@ -71,7 +98,7 @@
     <Modal
       v-if="updatedData"
       v-model="updateWishlistModal"
-      title="Update List"
+      :title="`${!updatedData.id ? 'New' : 'Update'} List`"
       :btn-disabled="disableUpdateModalBtn"
       @on-confirm="doUpdateWishlist()"
       @on-close="updatedData = null"
@@ -185,6 +212,31 @@ export default {
       };
       this.updateWishlistModal = true;
     },
+    deleteAllWishList() {
+      this.$swal
+        .fire({
+          title: "Are you sure?",
+          text: `Delete all from wishlist`,
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Delete",
+          confirmButtonColor: "#f14668",
+        })
+        .then((result) => {
+          this.$store.dispatch("wishlist/deleteList");
+          if (result.isConfirmed) {
+            this.$swal.fire({
+              position: "top-end",
+              icon: "success",
+              text: "Item successfully deleted!",
+              showConfirmButton: false,
+              timer: 3000,
+            });
+
+            window.location.reload(true);
+          }
+        });
+    },
     deleteList(payload) {
       this.$swal
         .fire({
@@ -224,12 +276,13 @@ export default {
       this.addWishlistModal = false;
     },
     doUpdateWishlist() {
-      console.log("doUpdateWishlist", this.updatedData);
       this.$store.dispatch("wishlist/updateList", this.updatedData);
       this.$swal.fire({
         position: "top-end",
         icon: "success",
-        text: "Wishlist successfully updated!",
+        text: `Wishlist successfully ${
+          !this.updatedData.id ? "added" : "updated"
+        }!`,
         showConfirmButton: false,
         timer: 3000,
       });
@@ -278,7 +331,7 @@ export default {
             // showConfirmButton: false,
             // timer: 3000,
           });
-          return
+          return;
         }
         self.addWishlistModal = true;
         self.$refs.fileupload.value = null;

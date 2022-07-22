@@ -10,6 +10,12 @@
         : 'is-capitalized',
     ]"
   >
+    <!-- floating logged in button -->
+    <div v-if="user" class="container floating-container">
+      <button class="floating-button no-select container no-select">
+        <a href="/user">User Dashboard</a>
+      </button>
+    </div>
     <div class="hero-body">
       <div v-if="!i.override_main" class="container has-text-centered">
         <div data-aos="zoom-in" data-aos-offset="0" :class="'title-' + i.theme">
@@ -28,9 +34,7 @@
         >
           <div
             :data-aos="
-              i.groom_or_bride_first === 'bride'
-                ? 'fade-left'
-                : 'fade-right'
+              i.groom_or_bride_first === 'bride' ? 'fade-left' : 'fade-right'
             "
             data-aos-offset="0"
             data-aos-duration="1000"
@@ -40,9 +44,7 @@
           <div data-aos="zoom-in" class="amp">&amp;</div>
           <div
             :data-aos="
-              i.groom_or_bride_first === 'groom'
-                ? 'fade-left'
-                : 'fade-right'
+              i.groom_or_bride_first === 'groom' ? 'fade-left' : 'fade-right'
             "
             data-aos-offset="0"
             data-aos-duration="1000"
@@ -79,6 +81,8 @@ export default {
   computed: {
     ...mapState({
       i: (state) => state.info,
+      theme: (state) => state.info.theme,
+      user: (state) => state.auth.user,
     }),
   },
 };
@@ -118,6 +122,27 @@ export default {
 .date-gregorian,
 .venue {
   font-family: $primary-font;
+}
+
+.floating-container {
+  position: fixed;
+  width: 100%;
+  padding: 0 10px;
+  top: 10px;
+  z-index: 99;
+  background: white;
+  // text-align: right;
+  -webkit-transform: translateZ(1);
+  background: transparent;
+  .floating-button {
+    cursor: pointer;
+    z-index: 99;
+    border-radius: 50px;
+    text-align: center;
+    float: none;
+    width: 100%;
+    height: 40px;
+  }
 }
 </style>
 
