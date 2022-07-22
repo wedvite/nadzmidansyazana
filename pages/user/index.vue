@@ -25,16 +25,16 @@
 
 <script>
 import Wishlist from "~/components/User/Wishlist";
-import Guestlist from "~/components/User/Guestlist";
+import Guestlist from "~/components/User/Guestlist/index";
 export default {
   layout: "user",
   middleware: ["authenticated"],
   components: { Wishlist, Guestlist },
   data() {
     return {
-      currentMenu: "wishlist",
+      currentMenu: "Wishlist",
       menuList: [
-        { label: "Wishlist", value: "wishlist" },
+        { label: "Wishlist", value: "Wishlist" },
         { label: "Guestlist", value: "Guestlist" },
       ],
     };

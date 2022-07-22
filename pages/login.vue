@@ -5,7 +5,7 @@
         class="columns is-flex is-flex-direction-column box is-fullwidth"
         style="max-width: 500px"
       >
-        <h1 class="title">Sign In</h1>
+        <h1 class="title">Login</h1>
         <div class="column">
           <button
             type="button"

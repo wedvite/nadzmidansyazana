@@ -33,7 +33,7 @@
           <div class="navbar-item">
             <div class="buttons">
               <button class="button is-light no-select" @click="doSignOut()">
-                <strong>Sign Out</strong>
+                <strong>Logout</strong>
               </button>
             </div>
           </div>

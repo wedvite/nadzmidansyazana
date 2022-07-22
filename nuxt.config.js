@@ -108,7 +108,7 @@ module.exports = {
       'vue-sweetalert2/nuxt',
       {
         confirmButtonColor: '#48c78e',
-        // cancelButtonColor: '#f14668',
+        cancelButtonColor: '#dbdbdb',
         reverseButtons: true
       }
     ]

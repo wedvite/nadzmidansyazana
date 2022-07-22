@@ -7,7 +7,7 @@
       :line-numbers="true"
       :sort-options="sortOpts"
       :pagination-options="paginationOpts"
-      theme="nocturnal"
+      theme="black-rhino"
       styleClass="vgt-table condensed bordered"
     >
       <template slot="table-actions">
@@ -223,8 +223,8 @@ export default {
           confirmButtonColor: "#f14668",
         })
         .then((result) => {
-          this.$store.dispatch("wishlist/deleteList");
           if (result.isConfirmed) {
+            this.$store.dispatch("wishlist/deleteList");
             this.$swal.fire({
               position: "top-end",
               icon: "success",
@@ -248,8 +248,8 @@ export default {
           confirmButtonColor: "#f14668",
         })
         .then((result) => {
-          this.$store.dispatch("wishlist/deleteList", payload.id);
           if (result.isConfirmed) {
+            this.$store.dispatch("wishlist/deleteList", payload.id);
             this.$swal.fire({
               position: "top-end",
               icon: "success",
@@ -323,18 +323,19 @@ export default {
           []
         );
 
+        self.$refs.fileupload.value = null;
+
         if (!self.importedWishlistData.length) {
           self.$swal.fire({
             position: "top-end",
             icon: "error",
-            text: "No wishlist item found from imported file! Please ensure file is following correct column format. (WISHLIST)",
+            text: "No wishlist found from imported file! Please ensure file is following correct column format. (WISHLIST)",
             // showConfirmButton: false,
             // timer: 3000,
           });
           return;
         }
         self.addWishlistModal = true;
-        self.$refs.fileupload.value = null;
       };
       reader.readAsArrayBuffer(oFile);
     },

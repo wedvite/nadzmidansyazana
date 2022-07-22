@@ -31,7 +31,8 @@ export const state = () => ({
   info: {},
   dbInfo: {},
   showPage: null,
-  rsvp: []
+  rsvp: [],
+  guestlist: []
 });
 
 export const getters = {
@@ -56,6 +57,7 @@ export const actions = {
         doc = doc.data();
         console.log("Current data: ", doc);
         if (doc?.rsvp) commit("SET_RSVP", Object.values(doc.rsvp));
+        if (doc?.guestlist) commit("SET_GUESTLIST", Object.values(doc.guestlist));
       });
 
     let mergedInfo;
@@ -102,7 +104,11 @@ export const mutations = {
   SET_DB_INFO(state, i) {
     state.dbInfo = i;
   },
-  SET_RSVP(state, r) {
-    state.rsvp = r;
+  SET_RSVP(state, rsvp) {
+    state.rsvp = rsvp;
+  },
+  SET_GUESTLIST(state, guestlist) {
+    console.log("SET_GUESTLIST", guestlist);
+    state.guestlist = guestlist;
   }
 };
