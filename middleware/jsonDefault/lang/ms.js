@@ -42,11 +42,11 @@ export const INFO_MS = {
     "carouselAutoplay": true,
     "images": [
       // {
-      //   "src": "./images/sample-1.jpg",
+      //   "src": "/images/sample-1.jpg",
       //   "htmlTitle": "Hey sayangku!"
       // },
       // {
-      //   "src": "./images/sample-2.jpg",
+      //   "src": "/images/sample-2.jpg",
       //   "htmlTitle": "<div class=\"has-text-success\">Wedding!</div>"
       // }
     ]

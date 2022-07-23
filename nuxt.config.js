@@ -95,7 +95,8 @@ module.exports = {
             'faFrown',
             'faMeh',
             'faComments',
-            'faUpload'
+            'faUpload',
+            'faCopy',
           ]
         },
         {

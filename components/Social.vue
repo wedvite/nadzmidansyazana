@@ -47,9 +47,10 @@
     </div>
 
     <div
+      ref="carousel"
+      id="imagesCarousel"
       data-aos="zoom-in"
       v-if="s.images && s.images.length"
-      :data-autoplay="s.carouselAutoplay === false ? false : true"
       class="carousel carousel-animated carousel-animate-slide"
     >
       <div class="carousel-container">
@@ -90,7 +91,9 @@ export default {
     }),
   },
   mounted() {
-    bulmaAccordion.attach();
+    bulmaAccordion.attach("#imagesCarousel", {
+      autoplay: this.s?.carouselAutoplay === false ? false : true,
+    });
   },
 };
 </script>

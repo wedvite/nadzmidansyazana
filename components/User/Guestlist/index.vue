@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div v-show="mode === 'addGuestlist'">
+    <div v-if="mode === 'addGuestlist'">
       <GuestlistForm @cancel="mode = 'index'" />
     </div>
 
-    <div v-show="mode === 'setInvitationText'">
+    <div v-if="mode === 'setInvitationText'">
       <InvitationTextForm @cancel="mode = 'index'" />
     </div>
 

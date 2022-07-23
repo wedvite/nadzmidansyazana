@@ -8,7 +8,8 @@ const ID_SIZE = 8;
 
 export const state = () => ({
   invitationText: "",
-  guestlist: []
+  guestlist: [],
+  currentGuest: null,
 })
 
 export const actions = {
@@ -87,6 +88,20 @@ export const actions = {
       .update({
         [key]: firebase.firestore.FieldValue.delete()
       })
+  },
+  getGuestDetails({ commit }, id) {
+    commit("SET_CURRENT_GUEST", null);
+    return fireDb
+      .collection(conf.collection)
+      .doc(conf.doc)
+      .onSnapshot(doc => {
+        doc = doc.data();
+        // console.log("Current data: ", doc);
+
+        if (doc?.guestlist?.[id]) {
+          commit("SET_CURRENT_GUEST", doc.guestlist[id]);
+        }
+      });
   }
 
 }
@@ -97,5 +112,8 @@ export const mutations = {
   },
   SET_GUESTLIST(state, list) {
     state.guestlist = list;
+  },
+  SET_CURRENT_GUEST(state, guest) {
+    state.currentGuest = guest || null;
   }
 }

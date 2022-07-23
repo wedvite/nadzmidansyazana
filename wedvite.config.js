@@ -46,6 +46,8 @@ export const rsvpOptions = [
   { value: 'Tidak Hadir', class: 'is-warning', faIcon: 'frown', hidePax: true },
 ];
 
+export const rsvpMaxPax = 3;
+
 export const userData = require(`./_infos/client.json`);
 
 export const cfg = {

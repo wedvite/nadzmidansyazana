@@ -28,9 +28,7 @@
     >
       <div
         :data-aos="
-          i.groom_or_bride_first === 'bride'
-            ? 'fade-left'
-            : 'fade-right'
+          i.groom_or_bride_first === 'bride' ? 'fade-left' : 'fade-right'
         "
         data-aos-duration="1000"
         v-html="i.groom[i.invitation_section.couple_name_type]"
@@ -38,9 +36,7 @@
       <div data-aos="zoom-in" class="amp">&amp;</div>
       <div
         :data-aos="
-          i.groom_or_bride_first === 'groom'
-            ? 'fade-left'
-            : 'fade-right'
+          i.groom_or_bride_first === 'groom' ? 'fade-left' : 'fade-right'
         "
         data-aos-duration="1000"
         v-html="i.bride[i.invitation_section.couple_name_type]"
@@ -86,17 +82,37 @@ export default {
   computed: {
     ...mapState({
       i: (state) => state.info,
+      currentGuest: (state) => state.protected.currentGuest,
     }),
   },
   mounted() {
-    let g = this.$route.query.g;
-    if (g) {
-      let el = document.getElementsByClassName("guest")[0];
-      if (el) {
-        el.innerHTML = g;
-        el.classList.add("available");
-      }
-    }
+    // const { g } = this.$route.query;
+    // if (g) {
+    //   let el = document.getElementsByClassName("guest")[0];
+    //   if (el) {
+    //     el.innerHTML = g;
+    //     el.classList.add("available");
+    //   }
+    // }
+
+    const { id } = this.$route.params;
+    if (id) {
+      this.$store.dispatch("protected/getGuestDetails", id);
+    } 
+  },
+  watch: {
+    currentGuest: {
+      handler(nv) {
+        if (nv) {
+          let el = document.getElementsByClassName("guest")[0];
+          if (el) {
+            el.innerHTML = nv.guest;
+            el.classList.add("available");
+          }
+        }
+      },
+      deep: true,
+    },
   },
 };
 </script>

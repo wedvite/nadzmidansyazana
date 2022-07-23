@@ -196,10 +196,10 @@
                       >
                         <div
                           class="dropdown-content"
-                          style="max-height: 150px; overflow: scroll"
+                          style="max-height: 150px; overflow: hidden auto"
                         >
                           <a
-                            v-for="i in 3"
+                            v-for="i in rsvpPax"
                             :key="i"
                             class="dropdown-item"
                             :class="{ 'is-active': i == rsvp.details.pax }"
@@ -268,7 +268,7 @@
 
 
 <script>
-import { rsvpOptions } from "~/wedvite.config";
+import { rsvpOptions, rsvpMaxPax } from "~/wedvite.config";
 
 import { cloneDeep, sortBy } from "lodash";
 import { mapState, mapGetters } from "vuex";
@@ -289,6 +289,7 @@ export default {
       myRsvp: { status: null },
       scrollPos: 0,
       rsvpOptions,
+      rsvpMaxPax,
     };
   },
   computed: {
@@ -297,6 +298,7 @@ export default {
       dbRsvp: (state) => state.rsvp,
       countdownEnd: (state) => state.info.countdown_end,
       rsvp_section: (state) => state.info.rsvp_section,
+      currentGuest: (state) => state.protected.currentGuest,
     }),
     ...mapGetters(["countRsvpStatus"]),
     sortedRsvp() {
@@ -307,6 +309,9 @@ export default {
     },
     endDate() {
       return new Date() > new Date(this.countdownEnd);
+    },
+    rsvpPax() {
+      return this.currentGuest?.pax || this.rsvpMaxPax;
     },
   },
   created() {

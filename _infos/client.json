@@ -57,7 +57,7 @@
     "carouselAutoplay": false,
     "images": [
       {
-        "src": "./images/sample-1.jpg",
+        "src": "/images/sample-1.jpg",
         "htmlTitle": "Hey sayangku!"
       }
     ]

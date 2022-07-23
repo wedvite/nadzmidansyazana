@@ -39,6 +39,19 @@
           >
             <fa :icon="['fab', 'whatsapp-square']" class="whatsapp" />
           </a>
+
+          <a
+            @click.prevent.stop="
+              copyStringToClipboard(
+                inviteText(props.row),
+                'Invitation text copied!'
+              )
+            "
+            class="pointer"
+            style="margin-left: 0.5rem; line-height: 1"
+          >
+            <fa icon="copy" />
+          </a>
         </span>
 
         <span v-else>{{ props.formattedRow[props.column.field] }}</span>
@@ -104,6 +117,15 @@ export default {
       },
       columns: [
         {
+          label: "ID",
+          field: "id",
+          thClass: "has-text-centered id-col",
+          tdClass: "has-text-left",
+          filterOptions: {
+            enabled: true,
+          },
+        },
+        {
           label: "Guest",
           field: "guest",
           thClass: "has-textcentered guest-col",
@@ -125,7 +147,7 @@ export default {
           },
         },
         {
-          label: "Pax (up to)",
+          label: "Pax Allowed",
           field: "pax",
           type: "number",
           thClass: "has-text-centered pax-col",
@@ -142,7 +164,7 @@ export default {
           thClass: "has-text-right",
           tdClass: "has-text-right",
           sortable: false,
-          width: "160px",
+          width: "200px",
         },
         {
           label: "Timestamp",
@@ -212,20 +234,47 @@ export default {
           }
         });
     },
-    formatUrl(payload) {
-      if (!guest) guest = this.form.g;
-
-      let url = this.form.url.toLowerCase().replace(/\s+/g, "");
-      return `${url}?g=${encodeURIComponent(guest)}`;
-    },
-    formatWhatsappLink(payload) {
+    inviteText(payload) {
       const inviteUrl = `${window.location.origin}/guest/${payload.id}`;
 
-      const inviteText = this.invitationText.replace("{URL}", inviteUrl);
-
+      let text = this.invitationText.replace("{URL}", inviteUrl);
+      text = text.replace("{GUEST}", payload.guest || "");
+      return text;
+    },
+    formatWhatsappLink(payload) {
       return `https://wa.me/${payload.tel}?text=${encodeURIComponent(
-        inviteText
+        this.inviteText(payload)
       )}`;
+    },
+    copyStringToClipboard(str, notifyMessage) {
+      // Create new element
+      var el = document.createElement("textarea");
+      // Set value (string to be copied)
+      el.value = str;
+      // Set non-editable to avoid focus and move outside of view
+      el.setAttribute("readonly", "");
+      el.style = { position: "absolute", left: "-9999px" };
+      document.body.appendChild(el);
+      // Select text inside element
+      el.select();
+      // Copy text to clipboard
+      document.execCommand("copy");
+      // Remove temporary element
+      document.body.removeChild(el);
+
+      console.log("Text copied! --------");
+      console.log(str);
+      console.log("-------- End copy");
+
+      if (notifyMessage) {
+        this.$swal.fire({
+          position: "top-end",
+          icon: "success",
+          text: notifyMessage,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      }
     },
   },
 };
@@ -243,12 +292,15 @@ export default {
     min-width: 120px;
   }
   .action-col {
-    min-width: 160px;
+    min-width: 200px;
   }
-}
 
-.whatsapp {
-  font-size: 1.5em;
-  color: #25d366;
+  .whatsapp {
+    color: #25d366;
+  }
+
+  svg {
+    font-size: 1.5em;
+  }
 }
 </style>

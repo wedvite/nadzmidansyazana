@@ -25,7 +25,7 @@
             />
           </div>
           <div class="help has-text-grey">
-            {URL} will be replaced with actual wedding link.
+            {URL} will be replaced with actual wedding link, {GUEST} will be replaced with actual guest text (if any)
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export default {
     this.defaultForm = Object.freeze({ ...this.form });
     this.form.inviteText =
       cloneDeep(this.invitationText) ||
-      "With great pleasure, we're inviting you to join in the celebration of the marriage of our family members. \n\n{URL}";
+      "With great pleasure, we're inviting \n\n{GUEST}\n\nto join in the celebration of the marriage of our family members. \n\n{URL}\n\nThank you";
   },
   computed: {
     ...mapState({
