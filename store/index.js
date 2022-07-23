@@ -55,9 +55,8 @@ export const actions = {
       .doc(conf.doc)
       .onSnapshot(doc => {
         doc = doc.data();
-        console.log("Current data: ", doc);
+        // console.log("Current data: ", doc);
         if (doc?.rsvp) commit("SET_RSVP", Object.values(doc.rsvp));
-        if (doc?.guestlist) commit("SET_GUESTLIST", Object.values(doc.guestlist));
       });
 
     let mergedInfo;
@@ -107,8 +106,4 @@ export const mutations = {
   SET_RSVP(state, rsvp) {
     state.rsvp = rsvp;
   },
-  SET_GUESTLIST(state, guestlist) {
-    console.log("SET_GUESTLIST", guestlist);
-    state.guestlist = guestlist;
-  }
 };

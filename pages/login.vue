@@ -22,7 +22,7 @@
 
 <script>
 import firebase from "firebase/app";
-import { authEmails } from "~/wedvite.config";
+import { allowedEmails } from "~/wedvite.config";
 
 export default {
   middleware: ["notAuthenticated"],
@@ -32,7 +32,7 @@ export default {
     };
   },
   // created() {
-  //   console.log({ authEmails });
+  //   console.log({ allowedEmails });
   // },
   methods: {
     async signInWith() {
@@ -40,7 +40,7 @@ export default {
       const res = await this.$store.dispatch("auth/signInProvider", provider);
 
       if (res?.user) {
-        if (!authEmails.includes(res?.user?.email)) {
+        if (!allowedEmails.includes(res?.user?.email)) {
           this.$swal.fire({
             position: "top-end",
             icon: "error",

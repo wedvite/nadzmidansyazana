@@ -1,10 +1,10 @@
 
 // Demo
-export const project = 'hanisfadzil_spW7h1guWOh0DctRpkvFreI1zLq2';
+export const project = 'hanisfadzil';
 export const wishlistDoc = "hanisfadzil";
 export const projectTitle = 'Hanis & Fadzil';
 
-export const authEmails = [
+export const allowedEmails = [
   "fadziljusri@gmail.com",
   "nurhanismohdshukri@gmail.com"
 ]
@@ -13,6 +13,11 @@ export const fireStore = {
   collection: "infos",
   doc: project === "demo" ? "_demo" : project
 };
+
+export const fireStoreProtected = {
+  collection: "infos_protected",
+  doc: project === "demo" ? "_demo" : project
+}
 
 export const fireStoreWishlist = {
   collection: "wishlist",

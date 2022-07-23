@@ -100,7 +100,7 @@ module.exports = {
         },
         {
           set: '@fortawesome/fontawesome-free-brands',
-          icons: ['faWhatsapp', 'faTelegramPlane']
+          icons: ['faWhatsapp', 'faWhatsappSquare', 'faTelegramPlane']
         }
       ]
     }],

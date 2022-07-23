@@ -77,11 +77,11 @@
       </template>
     </vue-good-table>
 
-    <Modal v-model="addWishlistModal" title="Import Wishlist (.csv)">
+    <Modal v-model="addModal" title="Import Wishlist (.csv)">
       <div>
         <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
           <tbody>
-            <tr v-for="(list, index) in importedWishlistData" :key="index">
+            <tr v-for="(list, index) in importedData" :key="index">
               <td>{{ list.item }}</td>
             </tr>
           </tbody>
@@ -90,14 +90,14 @@
 
       <template slot="confirm">
         <button class="button is-success" @click="doSaveWishlist()">
-          Save Wishlist ({{ importedWishlistData.length }})
+          Save Wishlist ({{ importedData.length }})
         </button>
       </template>
     </Modal>
 
     <Modal
       v-if="updatedData"
-      v-model="updateWishlistModal"
+      v-model="updateModal"
       :title="`${!updatedData.id ? 'New' : 'Update'} List`"
       :btn-disabled="disableUpdateModalBtn"
       @on-confirm="doUpdateWishlist()"
@@ -186,9 +186,9 @@ export default {
           hidden: true,
         },
       ],
-      addWishlistModal: false,
-      updateWishlistModal: false,
-      importedWishlistData: [],
+      addModal: false,
+      updateModal: false,
+      importedData: [],
       updatedData: null,
     };
   },
@@ -210,7 +210,7 @@ export default {
         item: payload.item,
         sponsoredBy: payload.sponsoredBy || "",
       };
-      this.updateWishlistModal = true;
+      this.updateModal = true;
     },
     deleteAllWishList() {
       this.$swal
@@ -233,7 +233,9 @@ export default {
               timer: 3000,
             });
 
-            window.location.reload(true);
+            setTimeout(() => {
+              window.location.reload(true);
+            }, 3000);
           }
         });
     },
@@ -261,10 +263,7 @@ export default {
         });
     },
     doSaveWishlist() {
-      this.$store.dispatch(
-        "wishlist/importWishlist",
-        this.importedWishlistData
-      );
+      this.$store.dispatch("wishlist/importWishlist", this.importedData);
       this.$swal.fire({
         position: "top-end",
         icon: "success",
@@ -272,8 +271,8 @@ export default {
         showConfirmButton: false,
         timer: 3000,
       });
-      this.importedWishlistData = [];
-      this.addWishlistModal = false;
+      this.importedData = [];
+      this.addModal = false;
     },
     doUpdateWishlist() {
       this.$store.dispatch("wishlist/updateList", this.updatedData);
@@ -287,13 +286,13 @@ export default {
         timer: 3000,
       });
       this.updatedData = null;
-      this.updateWishlistModal = false;
+      this.updateModal = false;
     },
     onFileChange(oEvent) {
       let oFile = oEvent.target.files[0];
       if (!oFile) return;
 
-      this.importedWishlistData = [];
+      this.importedData = [];
       let reader = new FileReader();
 
       let self = this;
@@ -310,22 +309,19 @@ export default {
           if (roa.length) result[sheetName] = roa;
         });
         // see the result, caution: it works after reader event is done.
-        self.importedWishlistData = Object.values(result)[0].reduce(
-          (out, e) => {
-            // let TEL = String(e.TEL).replace(/\D/g, "");
-            // TEL = TEL[0] === "6" ? TEL : `6${TEL}`;
-            if (e.WISHLIST) {
-              out.push({ item: e.WISHLIST });
-            }
+        self.importedData = Object.values(result)[0].reduce((out, e) => {
+          // let TEL = String(e.TEL).replace(/\D/g, "");
+          // TEL = TEL[0] === "6" ? TEL : `6${TEL}`;
+          if (e.WISHLIST) {
+            out.push({ item: e.WISHLIST });
+          }
 
-            return out;
-          },
-          []
-        );
+          return out;
+        }, []);
 
         self.$refs.fileupload.value = null;
 
-        if (!self.importedWishlistData.length) {
+        if (!self.importedData.length) {
           self.$swal.fire({
             position: "top-end",
             icon: "error",
@@ -335,7 +331,7 @@ export default {
           });
           return;
         }
-        self.addWishlistModal = true;
+        self.addModal = true;
       };
       reader.readAsArrayBuffer(oFile);
     },
@@ -348,6 +344,9 @@ export default {
   .item-col,
   .sponsor-col {
     min-width: 200px;
+  }
+  .action-col {
+    min-width: 160px;
   }
 }
 </style>

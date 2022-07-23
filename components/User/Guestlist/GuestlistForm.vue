@@ -4,7 +4,7 @@
     <div class="field has-text-right">
       <button
         type="button"
-        class="button is-light"
+        class="button is-small is-light"
         @click.prevent="$emit('cancel')"
       >
         Cancel
@@ -145,8 +145,8 @@
               </label>
             </div>
             <p class="help has-text-grey">
-              {{ importedGuestlistData.length }} guest{{
-                importedGuestlistData.length > 1 ? "s" : ""
+              {{ importedData.length }} guest{{
+                importedData.length > 1 ? "s" : ""
               }}
               imported!
             </p>
@@ -154,6 +154,31 @@
           <!-- <div class="field">
               <button type="button" class="button is-light">Clear Excel</button>
             </div> -->
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <!-- Left empty for spacing -->
+        </div>
+        <div class="field-body">
+          <div
+            class="field"
+            style="max-height: 300px; overflow-x: hidden; overflow-y: auto"
+          >
+            <table
+              class="table is-bordered is-narrow is-hoverable is-fullwidth"
+            >
+              <tbody>
+                <tr v-for="(item, index) in importedData" :key="index">
+                  <td style="width: 20px">{{ index + 1 }}</td>
+                  <td>{{ item.guest }}</td>
+                  <td>{{ item.tel }}</td>
+                  <td>{{ item.pax || "-" }} pax</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -199,7 +224,7 @@ export default {
         tel: "",
         pax: "",
       },
-      importedGuestlistData: [],
+      importedData: [],
     };
   },
   created() {
@@ -207,19 +232,23 @@ export default {
   },
   computed: {
     formDisable() {
-      // TODO:
-      return false;
+      if (this.form.mode === "manual") {
+        return !this.form.guest || !this.form.tel;
+      }
+
+      return !this.importedData.length;
     },
   },
   methods: {
     resetForm() {
       this.form = { ...this.defaultForm };
+      this.importedData = [];
     },
     onFileChange(oEvent) {
       let oFile = oEvent.target.files[0];
       if (!oFile) return;
 
-      this.importedGuestlistData = [];
+      this.importedData = [];
       let reader = new FileReader();
 
       let self = this;
@@ -236,22 +265,19 @@ export default {
           if (roa.length) result[sheetName] = roa;
         });
         // see the result, caution: it works after reader event is done.
-        self.importedGuestlistData = Object.values(result)[0].reduce(
-          (out, e) => {
-            let TEL = String(e.TEL).replace(/\D/g, "");
-            TEL = TEL[0] === "6" ? TEL : `6${TEL}`;
-            if (e.GUEST && TEL) {
-              out.push({ gues: e.WISHLIST, tel: TEL, pax: e.PAX });
-            }
+        self.importedData = Object.values(result)[0].reduce((out, e) => {
+          let TEL = String(e.TEL).replace(/\D/g, "");
+          TEL = TEL[0] === "6" ? TEL : `60${Number(TEL)}`;
+          if (e.GUEST && TEL) {
+            out.push({ guest: e.GUEST, tel: TEL, pax: e.PAX });
+          }
 
-            return out;
-          },
-          []
-        );
+          return out;
+        }, []);
 
         self.$refs.fileupload.value = null;
 
-        if (!self.importedGuestlistData.length) {
+        if (!self.importedData.length) {
           self.$swal.fire({
             position: "top-end",
             icon: "error",
@@ -261,13 +287,31 @@ export default {
           });
           return;
         }
-        // self.addWishlistModal = true;
-        console.log(object);
       };
       reader.readAsArrayBuffer(oFile);
     },
     addGuestList() {
-      console.log("TODO: addGuestList");
+      if (this.form.mode === "manual") {
+        this.$store.dispatch("protected/importGuestlist", [
+          {
+            guest: this.form.guest,
+            tel: this.form.tel,
+            pax: this.form.pax,
+          },
+        ]);
+      } else {
+        this.$store.dispatch("protected/importGuestlist", this.importedData);
+      }
+
+      this.$swal.fire({
+        position: "top-end",
+        icon: "success",
+        text: "Gueslist successfully imported!",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      this.resetForm();
+      this.$emit("cancel");
     },
   },
 };

@@ -3,7 +3,7 @@
     <div class="field has-text-right">
       <button
         type="button"
-        class="button is-light"
+        class="button is-small is-light"
         @click.prevent="$emit('cancel')"
       >
         Cancel
@@ -25,7 +25,7 @@
             />
           </div>
           <div class="help has-text-grey">
-            &lt;URL&gt; will be replaced with actual wedding link.
+            {URL} will be replaced with actual wedding link.
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
               class="button is-text"
               @click.prevent="resetForm()"
             >
-              Reset
+              Clear
             </button>
           </div>
         </div>
@@ -60,22 +60,29 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+import { cloneDeep } from "lodash";
+
 export default {
   data() {
     return {
       form: {
-        inviteText:
-          "With great pleasure, we're inviting you to join in the celebration of the marriage of our family members. \n\n<URL>",
+        inviteText: "",
       },
     };
   },
   created() {
     this.defaultForm = Object.freeze({ ...this.form });
+    this.form.inviteText =
+      cloneDeep(this.invitationText) ||
+      "With great pleasure, we're inviting you to join in the celebration of the marriage of our family members. \n\n{URL}";
   },
   computed: {
+    ...mapState({
+      invitationText: (state) => state.protected.invitationText,
+    }),
     formDisable() {
-      // TODO:
-      return false;
+      return !this.form.inviteText;
     },
   },
   methods: {
@@ -83,7 +90,16 @@ export default {
       this.form = { ...this.defaultForm };
     },
     setInvitationText() {
-      console.log("TODO: addGuestList");
+      this.$store.dispatch("protected/setInvitationText", this.form.inviteText);
+      this.$swal.fire({
+        position: "top-end",
+        icon: "success",
+        text: "Invitation text successfully set!",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      this.resetForm();
+      this.$emit("cancel");
     },
   },
 };

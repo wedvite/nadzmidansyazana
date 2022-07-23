@@ -23,18 +23,6 @@ export const actions = {
         if (doc?.list) commit("SET_WISHLIST", Object.values(doc.list));
       });
   },
-  updateList({ }, list) {
-    if (!list?.id) {
-      list.id = makeid();
-    }
-
-    fireDb
-      .collection(conf.collection)
-      .doc(conf.doc)
-      .update({
-        [`list.${list.id}`]: pickBy(list)
-      })
-  },
   importWishlist({ }, wishlist = []) {
     const updated = {}
     wishlist.forEach(list => {
@@ -50,12 +38,22 @@ export const actions = {
       .doc(conf.doc)
       .update(updated)
   },
+  updateList({ }, list) {
+    if (!list?.id) {
+      list.id = makeid();
+    }
+
+    fireDb
+      .collection(conf.collection)
+      .doc(conf.doc)
+      .update({
+        [`list.${list.id}`]: pickBy(list)
+      })
+  },
   deleteList({ }, id) {
-    let key;
-    if (!id) {
-      key = 'list' // DELETE ALL!
-    } else {
-      key = `list.${id}`;
+    let key = "list"; // DELETE ALL!
+    if (id) {
+      key += `.${id}`;
     }
 
     fireDb
