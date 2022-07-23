@@ -1,6 +1,5 @@
 <template>
   <div v-show="scrollPos > 50" id="footer" class="container">
-    {{icsUrl}}
     <div :class="'footer-' + theme">
       <footer class="card-footer no-select">
         <span
@@ -111,7 +110,7 @@
             <div class="time is-uppercase">{{ time.from }} - {{ time.to }}</div>
 
             <footer
-              v-if="ics.enabled"
+              v-if="ics.enabled && icsUrl"
               class="card-footer has-text-weight-bold no-select"
             >
               <a
@@ -263,96 +262,6 @@ export default {
     handleScroll() {
       this.scrollPos = window.scrollY;
     },
-    downloadCal() {
-      console.log("download cal", process.server);
-      // if (process.server) {
-      // const { writeFileSync } = require("fs");
-      const { subject, start, duration } = cloneDeep(this.ics);
-      const location = this.address.general;
-
-      ics.createEvent(
-        {
-          title: subject,
-          status: "CONFIRMED",
-          start,
-          duration,
-          location,
-        },
-        (error, value) => {
-          if (error) {
-            console.log(error);
-          }
-
-          console.log(value);
-
-          const filename = `${`${snakeCase(
-            subject || "wedvite"
-          )}_${Date.now()}`}.ics`;
-
-          const blob = new Blob([value], {
-            type: "text/calendar;charset=utf-8",
-          });
-
-          if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-            // for IE
-            window.navigator.msSaveOrOpenBlob(blob, filename);
-          } else {
-            // for Non-IE (chrome, firefox etc.)
-            let a = document.createElement("a");
-            document.body.appendChild(a);
-            a.style = "display: none";
-            let icsUrl = URL.createObjectURL(blob);
-            console.log("icsUrl", icsUrl);
-            a.href = icsUrl;
-            a.download = filename;
-            a.click();
-            URL.revokeObjectURL(a.href);
-            a.remove();
-          }
-
-          // writeFileSync(
-          //   `${__dirname}/${snakeCase(
-          //     subject || "wedvite"
-          //   )}_${Date.now()}.ics`,
-          //   value
-          // );
-        }
-      );
-      // }
-    },
-    // _downloadCal() {
-    //   const { subject, begin, end } = cloneDeep(this.ics);
-    //   const location = this.address.general;
-
-    //   this.cal.addEvent(subject, "", location, begin, end);
-    //   this.cal.download(`${snakeCase(subject || "wedvite")}_${Date.now()}`);
-    // },
-    // addToGcal() {
-    //   let { text, from, to, location } = this.gcal;
-    //   let params = {
-    //     text,
-    //     dates: `${dayjs(from).format("YYYYMMDDThhmmss")}/${dayjs(to).format(
-    //       "YYYYMMDDThhmmss"
-    //     )}`,
-    //     details: "",
-    //     location,
-    //     sf: true,
-    //     output: "xml",
-    //     pli: 1
-    //   };
-
-    //   // console.log(params);
-    //   // return;
-    //   let paramsText = "";
-    //   Object.entries(params).forEach(e => {
-    //     paramsText +=
-    //       e[1] !== undefined ? `${e[0]}=${encodeURIComponent(e[1])}&` : "";
-    //   });
-    //   // let url = "https://calendar.google.com/calendar/r/eventedit?text=+Event+Title&dates=20190901T113000%2F20190902T163000&details=Details&location=Kidocode&sf=true&output=xml&pli=1";
-    //   let url = `https://calendar.google.com/calendar/r/eventedit?${paramsText}`;
-    //   let win = window.open(url, "_blank");
-    //   win.focus();
-    // }
   },
 };
 </script>

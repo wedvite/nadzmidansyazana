@@ -107,8 +107,6 @@
     "enabled": 1,
     "subject": "Walimatulurus - Hanis & Fadzil",
     "start": [2022, 10, 29, 11, 30],
-    "duration": { "hours": 5 },
-    "begin": "10/29/2022 11:30 am",
-    "end": "10/29/2022 4:30 pm"
+    "duration": { "hours": 5 }
   }
 }
