@@ -12,9 +12,13 @@
   >
     <!-- floating logged in button -->
     <div v-if="user" class="container floating-container">
-      <button class="floating-button no-select container no-select">
-        <a href="/user">User Dashboard</a>
-      </button>
+      <router-link
+        to="/user"
+        tag="button"
+        class="floating-button no-select container no-select"
+      >
+        <div class="has-text-link">User Dashboard</div>
+      </router-link>
     </div>
     <div class="hero-body">
       <div v-if="!i.override_main" class="container has-text-centered">

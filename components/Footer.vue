@@ -113,7 +113,11 @@
               v-if="ics.enabled"
               class="card-footer has-text-weight-bold no-select"
             >
-              <a @click="downloadCal()" class="card-footer-item">
+              <a
+                :download="icsFilename"
+                :href="`data:text/calendar;charset=utf8,${icsUrl}`"
+                class="card-footer-item"
+              >
                 <span class="loc-icon">
                   <img
                     src="~assets/icons/gcal.png"
@@ -188,7 +192,9 @@
 
 <script>
 // import dayjs from "dayjs";
-import ics from "~/plugins/ics";
+// import ics from "~/plugins/ics";
+
+const ics = require("ics");
 import { cloneDeep, snakeCase } from "lodash";
 
 import { mapState } from "vuex";
@@ -199,7 +205,8 @@ export default {
       calendarModal: false,
       locationModal: false,
       scrollPos: 0,
-      cal: ics(),
+      icsUrl: "",
+      // cal: ics(),
     };
   },
   computed: {
@@ -215,9 +222,33 @@ export default {
     stripAddr: function () {
       return this.address.general.replace(/<(?:.|\n)*?>/gm, "");
     },
+    icsFilename() {
+      const { subject } = cloneDeep(this.ics);
+      return `${`${snakeCase(subject || "wedvite")}_${Date.now()}`}.ics`;
+    },
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+
+    const { subject, start, duration } = cloneDeep(this.ics);
+    const location = this.stripAddr;
+
+    ics.createEvent(
+      {
+        title: subject,
+        status: "CONFIRMED",
+        start,
+        duration,
+        location,
+      },
+      (error, value) => {
+        if (error) {
+          console.log(error);
+        }
+
+        this.icsUrl = value;
+      }
+    );
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -227,12 +258,69 @@ export default {
       this.scrollPos = window.scrollY;
     },
     downloadCal() {
-      let { subject, begin, end } = cloneDeep(this.ics),
-        location = this.address.general;
+      console.log("download cal", process.server);
+      // if (process.server) {
+      // const { writeFileSync } = require("fs");
+      const { subject, start, duration } = cloneDeep(this.ics);
+      const location = this.address.general;
 
-      this.cal.addEvent(subject, "", location, begin, end);
-      this.cal.download(`${snakeCase(subject || "wedvite")}_${Date.now()}`);
+      ics.createEvent(
+        {
+          title: subject,
+          status: "CONFIRMED",
+          start,
+          duration,
+          location,
+        },
+        (error, value) => {
+          if (error) {
+            console.log(error);
+          }
+
+          console.log(value);
+
+          const filename = `${`${snakeCase(
+            subject || "wedvite"
+          )}_${Date.now()}`}.ics`;
+
+          const blob = new Blob([value], {
+            type: "text/calendar;charset=utf-8",
+          });
+
+          if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+            // for IE
+            window.navigator.msSaveOrOpenBlob(blob, filename);
+          } else {
+            // for Non-IE (chrome, firefox etc.)
+            let a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+            let icsUrl = URL.createObjectURL(blob);
+            console.log("icsUrl", icsUrl);
+            a.href = icsUrl;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(a.href);
+            a.remove();
+          }
+
+          // writeFileSync(
+          //   `${__dirname}/${snakeCase(
+          //     subject || "wedvite"
+          //   )}_${Date.now()}.ics`,
+          //   value
+          // );
+        }
+      );
+      // }
     },
+    // _downloadCal() {
+    //   const { subject, begin, end } = cloneDeep(this.ics);
+    //   const location = this.address.general;
+
+    //   this.cal.addEvent(subject, "", location, begin, end);
+    //   this.cal.download(`${snakeCase(subject || "wedvite")}_${Date.now()}`);
+    // },
     // addToGcal() {
     //   let { text, from, to, location } = this.gcal;
     //   let params = {
