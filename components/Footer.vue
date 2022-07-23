@@ -1,5 +1,6 @@
 <template>
   <div v-show="scrollPos > 50" id="footer" class="container">
+    {{icsUrl}}
     <div :class="'footer-' + theme">
       <footer class="card-footer no-select">
         <span
@@ -115,7 +116,7 @@
             >
               <a
                 :download="icsFilename"
-                :href="`data:text/calendar;charset=utf8,${icsUrl}`"
+                :href="icsUrl"
                 class="card-footer-item"
               >
                 <span class="loc-icon">
@@ -246,7 +247,12 @@ export default {
           console.log(error);
         }
 
-        this.icsUrl = value;
+        const blob = new Blob([value], {
+          type: "text/calendar;charset=utf-8",
+        });
+
+        const icsUrl = URL.createObjectURL(blob);
+        this.icsUrl = icsUrl;
       }
     );
   },
