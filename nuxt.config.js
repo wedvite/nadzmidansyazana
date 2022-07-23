@@ -13,7 +13,7 @@ module.exports = {
   //   base: `/${cfg.name}`
   // },
   generate: {
-    dir: `./dist`
+    fallback: true
   },
   server: {
     host: '0.0.0.0', // default: localhost
