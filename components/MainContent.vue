@@ -147,9 +147,17 @@ export default {
 	display: flex;
 	flex-direction: column;
 	font-family: $cover-font;
+	font-size: 4rem;
+	margin-bottom: 1rem;
+	line-height: 1.3;
 
 	&.reverse {
 		flex-direction: column-reverse;
+	}
+
+	& > .amp {
+		line-height: 1;
+		font-size: 2rem;
 	}
 }
 

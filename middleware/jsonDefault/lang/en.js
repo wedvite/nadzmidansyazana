@@ -17,8 +17,8 @@ export const INFO_EN = {
     "name_type": "nickname"
   },
   "invitation_section": {
-    "title": "THE WEDDING OF",
-    "text": "We request the honor of your presence <div class='guest guest-box'><br><\/div> at the ceremony uniting",
+    "title": "With joyful hearts",
+    "text": "request the honor of your presence <span class='guest guest-box'><\/span> at the wedding of",
     "show_parents": 1,
     "couple_name_type": "fullname"
   },

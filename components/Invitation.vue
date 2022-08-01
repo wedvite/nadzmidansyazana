@@ -53,7 +53,7 @@
 
 		<div class="date">
 			<div data-aos="zoom-in" class="heading-1">
-				{{ i.lang === "en" ? "On" : "Pada" }}
+				{{ i.lang === "en" ? "on" : "Pada" }}
 			</div>
 			<!-- <div data-aos="zoom-in" class="intro-sub">on</div> -->
 			<div data-aos="zoom-in" class="heading-2">{{ i.date.greg }}</div>
@@ -64,7 +64,7 @@
 
 		<div class="time">
 			<div data-aos="zoom-in" class="heading-1">
-				{{ i.lang === "en" ? "From" : "Masa" }}
+				{{ i.lang === "en" ? "from" : "Masa" }}
 			</div>
 			<!-- <div data-aos="zoom-in" class="intro-sub">at</div> -->
 			<div data-aos="zoom-in" class="heading-2">
@@ -74,7 +74,7 @@
 
 		<div class="place">
 			<div data-aos="zoom-in" class="heading-1">
-				{{ i.lang === "en" ? "At" : "Bertempat di" }}
+				{{ i.lang === "en" ? "at" : "Bertempat di" }}
 			</div>
 			<!-- <div data-aos="zoom-in" class="intro-sub">at</div> -->
 			<div
@@ -140,7 +140,7 @@ export default {
 }
 
 .intro {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	margin-bottom: 1.5rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -191,7 +191,7 @@ export default {
 	margin-bottom: 1.5rem;
 
 	.heading-1 {
-		font-size: 0.9rem;
+		font-size: 1rem;
 	}
 
 	.heading-2 {
