@@ -135,12 +135,12 @@ export default {
 }
 
 .main-title {
-	font-size: 1rem;
+	font-size: 0.9rem;
 	margin-bottom: 1rem;
 }
 
 .intro {
-	font-size: 1rem;
+	font-size: 0.9rem;
 	margin-bottom: 1.5rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -191,7 +191,7 @@ export default {
 	margin-bottom: 1.5rem;
 
 	.heading-1 {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 
 	.heading-2 {
