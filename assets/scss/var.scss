@@ -7,10 +7,10 @@ Default Font
     src: local('MYRIADPRO'),
         url(~assets/fonts/MYRIADPRO-REGULAR.woff) format('woff');
 }
-$font-url: 'https://fonts.googleapis.com/css?family=Tangerine:wght@700&display=swap|Cormorant+Infant:ital,wght@1,600|Bilbo+Swash+Caps';
+$font-url: 'https://fonts.googleapis.com/css?family=Tangerine:wght@700&display=swap|Cormorant+Infant:ital,wght@1,600';
 
 $cover-font: 'Tangerine', cursive;
 $primary-font: 'Cormorant Infant', serif;
 $secondary-font: 'MYRIADPRO', serif;
-$countdown-font: 'Bilbo Swash Caps', cursive;
+$countdown-font: 'Tangerine', cursive;
 // $countdown-font: 'Alex Brush', cursive;
