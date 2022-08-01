@@ -7,7 +7,7 @@
 			'bg-image-' + i.theme,
 			i.main_section && i.main_section.text_transform
 				? i.main_section.text_transform
-				: 'is-capitalized',
+				: '',
 		]"
 	>
 		<!-- floating logged in button -->
@@ -27,6 +27,7 @@
 					data-aos-offset="0"
 					data-aos-duration="1000"
 					data-aos-delay="500"
+					class="main-content-title"
 					:class="'title-' + i.theme"
 				>
 					{{ i.main_section.title }}
@@ -79,7 +80,7 @@
 				<div
 					data-aos="zoom-in"
 					data-aos-offset="0"
-          data-aos-duration="1000"
+					data-aos-duration="1000"
 					data-aos-delay="500"
 					class="dates"
 					:class="'dates-' + i.theme"
@@ -93,7 +94,7 @@
 				<div
 					data-aos="zoom-in"
 					data-aos-offset="0"
-          data-aos-duration="1000"
+					data-aos-duration="1000"
 					data-aos-delay="500"
 					class="venue"
 					:class="'venue-' + i.theme"
@@ -137,6 +138,10 @@ export default {
 // .hero-body {
 //   margin-bottom: 3rem;
 // }
+
+.main-content-title {
+	margin-bottom: 0.5rem;
+}
 
 .couples {
 	display: flex;

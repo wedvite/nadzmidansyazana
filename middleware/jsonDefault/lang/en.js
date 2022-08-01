@@ -13,21 +13,21 @@ export const INFO_EN = {
     "rsvp": 1
   },
   "main_section": {
-    "title": "Wedding Of",
+    "title": "THE WEDDING OF",
     "name_type": "nickname"
   },
   "invitation_section": {
-    "title": "Wedding",
-    "text": "We request the honor of your presence at the ceremony uniting",
+    "title": "THE WEDDING OF",
+    "text": "We request the honor of your presence <div class='guest guest-box'><br><\/div> at the ceremony uniting",
     "show_parents": 1,
     "couple_name_type": "fullname"
   },
   "tentative_section": {
-    "title": "Tentatives",
+    "title": "Tentative",
     "tentatives": []
   },
   "doa_section": {
-    "text": "“\O Allah, You are the Loving (Al Wadud) and the Merciful (Al Rehman). Please put love and mercy in the hearts of this couple for each other. Bless this couple with children who will be a source of happiness and joy to them and the world. Strengthen the hearts of the bride and groom with faith, and let them increase in their love and commitment to You through their bond.\”"
+    "text": "“\O Allah, You are the Loving (Al Wadud) and the Merciful (Ar Rahman). Please put love and mercy in the hearts of this couple for each other. Bless this couple with children who will be a source of happiness and joy to them and the world. Strengthen the hearts of the bride and groom with faith, and let them increase in their love and commitment to You through their bond.\”"
   },
   "countdown_section": {
     "days": "days",
