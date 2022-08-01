@@ -28,7 +28,7 @@ export default {
   padding: 2rem 1rem;
 }
 
-@media only screen and (min-width: 520px) {
+@media only screen and (min-width: 1024px) {
   .user-content {
     padding-left: 0;
     padding-right: 0;

@@ -4,7 +4,7 @@
     <div class="container floating-container">
       <button
         v-show="scrollPos > 50 && !endDate"
-        class="floating-button no-select container"
+        class="floating-button no-select"
         :class="`bg-${theme} text-dark-${theme}`"
         @click.prevent="statusModal = !statusModal"
       >

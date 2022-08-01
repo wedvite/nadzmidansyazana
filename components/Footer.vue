@@ -192,7 +192,6 @@
 
 <script>
 // import dayjs from "dayjs";
-// import ics from "~/plugins/ics";
 
 const ics = require("ics");
 import { cloneDeep, snakeCase } from "lodash";
