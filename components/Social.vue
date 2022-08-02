@@ -1,7 +1,7 @@
 <template>
 	<section id="social-section" class="section">
 		<div class="social">
-			<div class="level is-mobile" v-if="s.ig_tags">
+			<div class="level is-mobile" v-if="formattedIgTags">
 				<div data-aos="zoom-in" class="level-item">
 					<figure style="margin-right: 0.75rem">
 						<img src="~assets/icons/ig.png" width="30" />
@@ -10,7 +10,7 @@
 						<a
 							:href="
 								'https://www.instagram.com/explore/tags/' +
-								s.ig_tags
+								formattedIgTags
 							"
 							target="_blank"
 							class="has-text-link"
@@ -89,6 +89,9 @@ export default {
 		...mapState({
 			s: (state) => state.info.social_section,
 		}),
+		formattedIgTags() {
+			return this.s?.ig_tags?.toLowerCase() || "";
+		}
 	},
 	mounted() {
 		bulmaAccordion.attach("#imagesCarousel", {

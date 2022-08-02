@@ -1,5 +1,12 @@
 <template>
 	<section id="invitation" class="section has-text-centered">
+		<img
+			data-aos="zoom-in"
+			src="~/assets/images/bismillah.png"
+			alt="bismillahirrahmanirrahim"
+			style="width: 60%; margin-bottom: 0.5rem"
+		/>
+		
 		<div
 			data-aos="zoom-in"
 			v-if="i.invitation_section.title"
