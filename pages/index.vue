@@ -7,7 +7,7 @@
 		<doa v-if="check(sectionStatus.doa)"></doa>
 		<countdown v-if="check(sectionStatus.countdown)" />
 		<social v-if="check(sectionStatus.social)" />
-		<wishlist v-if="check(sectionStatus.rsvp)" />
+		<wishlist v-if="check(sectionStatus.wishlist)" />
 		<rsvp v-if="check(sectionStatus.rsvp)" />
 		<app-footer></app-footer>
 		<!-- </keep-alive> -->

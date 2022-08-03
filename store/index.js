@@ -46,8 +46,9 @@ export const getters = {
 };
 
 export const actions = {
-  getInfo({ commit }, { info, overrideTheme = null }) {
+  getInfo({ commit, dispatch }, { info, overrideTheme = null }) {
     overrideTheme ? (info.theme = overrideTheme) : "";
+    dispatch("setInfo", info);
     // console.log("info", INFO_MS, info);
 
     fireDb
@@ -58,7 +59,8 @@ export const actions = {
         // console.log("Current data: ", doc);
         if (doc?.rsvp) commit("SET_RSVP", Object.values(doc.rsvp));
       });
-
+  },
+  setInfo({ commit }, info) {
     let mergedInfo;
     if (info && info.lang.toLowerCase() === "en")
       mergedInfo = merge(INFO_EN, info);

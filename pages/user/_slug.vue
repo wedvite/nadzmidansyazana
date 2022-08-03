@@ -35,9 +35,13 @@
 </template>
 
 <script>
+import { userData } from "~/wedvite.config.js";
+
 import Wishlist from "~/components/User/Wishlist";
 import Guestlist from "~/components/User/Guestlist/index";
-import { lowerCase, startCase } from 'lodash';
+import { head, lowerCase, remove, startCase } from "lodash";
+import { mapState } from "vuex";
+
 export default {
 	layout: "user",
 	middleware: ["authenticated"],
@@ -51,15 +55,26 @@ export default {
 			],
 		};
 	},
+	computed: {
+		...mapState({
+			sectionStatus: (state) => state.info.section_status || {},
+		}),
+	},
+	created() {
+		this.$store.dispatch("setInfo", userData);
+		
+		if (!this.sectionStatus?.wishlist) {
+			remove(this.menuList, { value: "Wishlist" });
+			if (this.currentMenu === "Wishlist") {
+				this.currentMenu = head(this.menuList)?.value || "";
+			}
+		}
+	},
 	watch: {
 		currentMenu(nv) {
-			history.pushState(
-				"",
-				"",
-				`/user/${lowerCase(nv)}`
-			);
-		}
-	}
+			history.pushState("", "", `/user/${lowerCase(nv)}`);
+		},
+	},
 };
 </script>
 

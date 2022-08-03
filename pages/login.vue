@@ -25,6 +25,7 @@ import firebase from "firebase/app";
 import { allowedEmails } from "~/wedvite.config";
 
 export default {
+	layout: "auth",
   middleware: ["notAuthenticated"],
   data() {
     return {
