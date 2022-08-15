@@ -49,7 +49,7 @@
       class="buttons is-centered more"
     >
       <a class="has-text-link pointer no-select" href="./wishlist/">
-        All Wishlist
+        Semua Wishlist
       </a>
     </div>
 
@@ -79,13 +79,13 @@
           <div v-show="!list.anon" class="columns is-mobile">
             <div class="column">
               <div class="field">
-                <label class="label">Name</label>
+                <label class="label">Nama</label>
                 <div class="control">
                   <input
                     class="input is-rounded"
                     type="text"
                     v-model="list.sponsoredBy"
-                    placeholder="Name"
+                    placeholder="Nama"
                   />
                 </div>
               </div>

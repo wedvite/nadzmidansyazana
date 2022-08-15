@@ -3,11 +3,11 @@
   "lang": "ms",
   "groom_or_bride_first": "bride",
   "groom": {
-    "fullname": "Muhammad Fadzil Bin Mohd Jusri",
+    "fullname": "Muhammad Fadzil bin Mohd Jusri",
     "nickname": "Fadzil"
   },
   "bride": {
-    "fullname": "Nurhanis Binti Mohd Shukri",
+    "fullname": "Nurhanis binti Mohd Shukri",
     "nickname": "Hanis"
   },
   "parents": {
@@ -16,11 +16,11 @@
   },
   "date": {
     "greg": "29 Oktober 2022",
-    "hijri": "4 Rabiulakhir 1444h"
+    "_hijri": "4 Rabiulakhir 1444h"
   },
   "time": {
-    "from": "11:30 AM",
-    "to": "4:30 PM"
+    "from": "11:00 AM",
+    "to": "4:00 PM"
   },
   "address": {
     "general": "E14 Felda Sendayan, <br>Seremban",
@@ -29,16 +29,19 @@
     "gmaps_link": "https://maps.app.goo.gl/SgegdrYxF8Cknh167",
     "waze_link": "https://waze.com/ul/hw22rjwg7c?&navigate=yes&zoom=16"
   },
-  "countdown_end": "2022-10-29 11:30 AM",
+  "countdown_end": "2022-10-29 11:00 AM",
+  "main_section": {
+    "title": "JEMPUTAN MAJLIS PERKAHWINAN"
+  },
   "invitation_section": {
-    "text": "Dengan Segala Hormatnya Kami Menjemput <br>Dato'/Datin/Tuan/Puan/Encik/Cik <div class='guest guest-box'><br><\/div>Ke Majlis Perkahwinan Puteri Kami"
+    "text": "Dengan segala hormatnya kami mempersilakan <br>Tan Sri/Dato'/Datin/Tuan/Puan/Encik/Cik <div class='guest guest-box'><br><\/div>bagi memeriahkan majlis perkahwinan anakanda kami"
   },
   "tentative_section": {
     "title": "TENTATIF",
     "style": "col",
     "tentatives": [
       {
-        "time": "11:30 AM",
+        "time": "11:00 AM",
         "details": "Majlis Bermula"
       },
       {
@@ -46,19 +49,19 @@
         "details": "Ketibaan Pengantin"
       },
       {
-        "time": "4:30 PM",
+        "time": "4:00 PM",
         "details": "Majlis Berakhir"
       }
     ]
   },
   "social_section": {
-    "ig_tags": "HanisChoosesFadzil",
+    "ig_tags": "HanisForFadzil",
     "ig_signature": null,
     "carouselAutoplay": false,
     "images": [
       {
         "src": "/images/sample-1.jpg",
-        "htmlTitle": "Hey sayangku!"
+        "_htmlTitle": "Hey sayangku!"
       }
     ]
   },
@@ -106,7 +109,7 @@
   "ics": {
     "enabled": 1,
     "subject": "Walimatulurus - Hanis & Fadzil",
-    "start": [2022, 10, 29, 11, 30],
+    "start": [2022, 10, 29, 11, 0],
     "duration": { "hours": 5 }
   }
 }

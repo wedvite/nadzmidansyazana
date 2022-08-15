@@ -5,7 +5,7 @@
     class="section has-text-centered"
   >
     <div data-aos="zoom-in" class="main-title" :class="'txt-dark-' + theme">
-      Wedding Countdown
+      Countdown
     </div>
     <div v-if="countEnd" class="tag is-success is-large">
       <p>{{ countdown_section.endText }} 🙂</p>

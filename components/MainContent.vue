@@ -45,9 +45,7 @@
 				>
 					<div
 						:data-aos="
-							i.groom_or_bride_first === 'bride'
-								? 'fade-left'
-								: 'fade-right'
+							i.groom_or_bride_first === 'bride' ? 'fade-left' : 'fade-right'
 						"
 						data-aos-offset="0"
 						data-aos-duration="2000"
@@ -65,9 +63,7 @@
 					</div>
 					<div
 						:data-aos="
-							i.groom_or_bride_first === 'groom'
-								? 'fade-left'
-								: 'fade-right'
+							i.groom_or_bride_first === 'groom' ? 'fade-left' : 'fade-right'
 						"
 						data-aos-offset="0"
 						data-aos-duration="2000"
@@ -85,7 +81,17 @@
 					class="dates"
 					:class="'dates-' + i.theme"
 				>
-					<div class="date-gregorian">{{ i.date.greg }}</div>
+					<!-- <div class="date-gregorian">{{ i.date.greg }}</div> -->
+
+					<div class="date-gregorian">
+						<span class="month">Oktober</span>
+						<span>
+							<span class="day">Sabtu</span>
+							<span class="day-number">29</span>
+							<span class="time">11.00AM</span>
+						</span>
+						<span class="year">2022</span>
+					</div>
 					<div v-if="i.date.hijri" class="date-hijri">
 						{{ i.date.hijri }}
 					</div>
@@ -164,6 +170,35 @@ export default {
 .date-gregorian,
 .venue {
 	font-family: $primary-font;
+}
+
+.date-gregorian {
+	.month, .year {
+		display: block;
+    font-size: 1em;
+    letter-spacing: 2px;
+    font-size: 1rem;
+	}
+
+	.day, .time {
+		display: inline-block;
+    padding: 0px 5px;
+    text-align: center;
+    vertical-align: middle;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    font-size: 1rem;
+		width: 70px;
+	}
+
+	.day-number {
+		display: inline-block;
+    padding: 0px 5px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 3.5rem;
+    line-height: 1;
+	}
 }
 
 .floating-container {

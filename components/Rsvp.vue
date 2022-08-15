@@ -72,7 +72,7 @@
             class="message"
           >
             <div class="message-body">
-              <strong>Wishes:</strong>
+              <strong>Ucapan:</strong>
               {{ myRsvp.details.wishes }}
             </div>
           </article>
@@ -110,7 +110,7 @@
         v-if="dbRsvp.length"
         class="buttons is-centered more"
       >
-        <a class="has-text-link pointer no-select" href="./rsvp/">All RSVP</a>
+        <a class="has-text-link pointer no-select" href="./rsvp/">Semua RSVP</a>
       </div>
 
       <!-- rsvp status -->
@@ -154,13 +154,13 @@
             <div class="columns is-mobile">
               <div class="column">
                 <div class="field">
-                  <label class="label">Name</label>
+                  <label class="label">Nama</label>
                   <div class="control">
                     <input
                       class="input is-rounded"
                       type="text"
                       v-model="rsvp.details.name"
-                      placeholder="Name"
+                      placeholder="Nama"
                     />
                   </div>
                 </div>
@@ -227,13 +227,13 @@
             <div class="columns">
               <div class="column">
                 <div class="field">
-                  <label class="label">Wishes!</label>
+                  <label class="label">Ucapan!</label>
                   <div class="control">
                     <input
                       class="input is-rounded"
                       type="text"
                       v-model="rsvp.details.wishes"
-                      placeholder="Congrats!"
+                      placeholder="Tahniah!"
                     />
                   </div>
                 </div>

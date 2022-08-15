@@ -6,7 +6,7 @@
         <a
           @click="$router.go(-1)"
           class="button is-text is-pulled-right is-shadowless"
-          >Back</a
+          >Kembali</a
         >
       </h1>
     </div>

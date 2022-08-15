@@ -1,6 +1,7 @@
 // Custom theme
-$custom-primary: #B99B57;
-$custom-secondary: white;
+$custom-primary: #242053;
+$custom-secondary: #F7D075;
+$custom-tertiary: #fff;
 
 .bg-custom,
 .bgt-custom {
@@ -9,14 +10,14 @@ $custom-secondary: white;
 }
 
 .bg-image-custom {
-  background-image: url("~assets/frames/custom/custom.png");
-  background-size: calc(100% + 1px) 100% !important;
-  background-position: -1px 0px;
+  background-image: url("~assets/frames/custom/custom.jpeg");
+  background-size: 100% auto;
+  background-position: center center;
 }
 
 .bgi-custom {
   background-color: $custom-primary !important;
-  // background-image: url("~assets/frames/custom/custom.png");
+  // background-image: url("~assets/frames/custom/custom.jpeg");
   // background-size: 100% auto;
   // background-position: center center;
   color: $custom-secondary !important;
@@ -45,23 +46,25 @@ $custom-secondary: white;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-size: 1.3rem;
+  color: $custom-tertiary;
 }
 
 .couples-custom {
-  font-size: 4rem;
+  font-size: 4.5rem !important;
   margin-bottom: 1rem;
   line-height: 1.3;
-  color: $custom-primary;
+  color: $custom-secondary;
 
   &>.amp {
     line-height: 1;
     font-size: 2rem;
-    color: $custom-secondary;
+    color: $custom-tertiary;
   }
 }
 
 .dates-custom {
   margin-bottom: 1rem;
+  color: $custom-tertiary;
 
   &>.date-gregorian {
     font-size: 1.3rem;
@@ -77,7 +80,7 @@ $custom-secondary: white;
 .venue-custom {
   font-size: 1.3rem;
   text-transform: uppercase;
-
+  color: $custom-tertiary;
 }
 
 // End Main Section
@@ -92,19 +95,31 @@ $custom-secondary: white;
 }
 
 #invitation {
+  // background-image: url("~assets/frames/custom/custom.jpeg");
+  // background-size: 100% 100%;
+  // background-position: center center;
+  background-color: $custom-primary;
+  color: $custom-tertiary;
+  padding: 1.5rem !important;
+  .main-title {
+    text-transform: uppercase !important;
+  }
 
   .couples,
   .parents,
   .guest {
-    text-transform: uppercase !important;
+    text-transform: capitalize !important;
     font-style: italic;
+    color: $custom-secondary;
     // font-size: 1.5rem !important;
-    font-weight: bolder !important;
   }
 }
 
 #tentative {
-  background-image: url("~assets/frames/custom/custom.png");
-  background-size: 100% auto;
-  background-position: center center;
+  background-color: $custom-tertiary !important;
+  color: #4a4a4a !important;
+  // color: $custom-;
+  // background-image: url("~assets/frames/custom/custom.jpeg");
+  // background-size: 100% auto;
+  // background-position: center center;
 }

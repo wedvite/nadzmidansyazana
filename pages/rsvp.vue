@@ -6,7 +6,7 @@
         <a
           @click="$router.go(-1)"
           class="button is-text is-pulled-right is-shadowless"
-          >Back</a
+          >Kembali</a
         >
       </h1>
     </div>
@@ -75,7 +75,7 @@ export default {
       },
       columns: [
         {
-          label: "Name",
+          label: "Nama",
           field: "details.name",
           thClass: "has-textcentered name-col",
           tdClass: "has-text-left",
@@ -85,7 +85,7 @@ export default {
           },
         },
         {
-          label: "Wishes",
+          label: "Ucapan",
           field: "details.wishes",
           thClass: "has-text-centered wishes-col",
           tdClass: "has-text-left",

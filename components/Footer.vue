@@ -8,7 +8,7 @@
         >
           <div class="level">
             <span class="level-item">
-              <fa :icon="['fas', 'address-book']" class="icon fa-x"></fa>Contact
+              <fa :icon="['fas', 'address-book']" class="icon fa-x"></fa>Hubungi
             </span>
           </div>
         </span>
@@ -21,7 +21,7 @@
         >
           <div class="level">
             <div class="level-item">
-              <fa icon="calendar-alt" class="icon fa-1x"></fa>Calendar
+              <fa icon="calendar-alt" class="icon fa-1x"></fa>Kalendar
             </div>
           </div>
         </span>
@@ -125,7 +125,7 @@
                     alt="Add to Google Calendar"
                   />
                 </span>
-                Add to Calendar
+                Simpan dalam Kalendar
               </a>
             </footer>
           </div>
@@ -165,7 +165,7 @@
                     alt="Google Maps icon"
                   />
                 </span>
-                GMaps
+                Maps
               </a>
               <a
                 :href="address.waze_link"
