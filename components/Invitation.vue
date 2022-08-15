@@ -1,16 +1,16 @@
 <template>
 	<section id="invitation" class="section has-text-centered">
-		<!-- <img
-			data-aos="zoom-in"
-			src="~/assets/images/bismillah.png"
-			alt="bismillahirrahmanirrahim"
-			style="width: 60%; margin-bottom: 0.5rem"
-		/> -->
-
 		<img
 			data-aos="zoom-in"
 			src="~/assets/images/line-up.png"
-			style="width: 100%; margin-bottom: 0.5rem"
+			style="width: 100%; margin-bottom: 0"
+		/>
+
+		<img
+			data-aos="zoom-in"
+			src="~/assets/images/bismillah-white.png"
+			alt="bismillahirrahmanirrahim"
+			style="height: 50px; margin-bottom: 1rem"
 		/>
 		<div>
 			<div
