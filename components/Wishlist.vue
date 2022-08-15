@@ -48,7 +48,7 @@
       v-if="wishlist.length > filteredWishlist.length"
       class="buttons is-centered more"
     >
-      <a class="has-text-link pointer no-select" href="./wishlist/">
+      <a class="has-text-link pointer no-select" href="/wishlist">
         Semua Wishlist
       </a>
     </div>

@@ -110,7 +110,7 @@
         v-if="dbRsvp.length"
         class="buttons is-centered more"
       >
-        <a class="has-text-link pointer no-select" href="./rsvp/">Semua RSVP</a>
+        <a class="has-text-link pointer no-select" href="/rsvp">Semua RSVP</a>
       </div>
 
       <!-- rsvp status -->
