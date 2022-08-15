@@ -70,7 +70,7 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/var.scss";
 #tentative {
-  font-family: $secondary-font;
+  font-family: $primary-font;
   // text-transform: uppercase;
 }
 

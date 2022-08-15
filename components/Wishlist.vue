@@ -199,7 +199,7 @@ export default {
 @import "~assets/scss/var.scss";
 
 #wishlist {
-  font-family: $secondary-font;
+  font-family: $primary-font;
 
   table {
     td,
@@ -215,7 +215,7 @@ export default {
 }
 
 .section * {
-  font-family: $secondary-font !important;
+  font-family: $primary-font !important;
 }
 
 section,

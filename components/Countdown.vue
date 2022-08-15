@@ -119,7 +119,7 @@ export default {
 p.title,
 p.heading,
 .tag {
-  font-family: $secondary-font;
+  font-family: $primary-font;
 }
 </style>
 

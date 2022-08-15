@@ -3,6 +3,8 @@ $custom-primary: #242053;
 $custom-secondary: #F7D075;
 $custom-tertiary: #fff;
 
+@import "~assets/scss/var.scss";
+
 .bg-custom,
 .bgt-custom {
   background-color: $custom-primary !important;
@@ -45,7 +47,6 @@ $custom-tertiary: #fff;
   line-height: normal;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  font-size: 1.3rem;
   color: $custom-tertiary;
 }
 
@@ -59,6 +60,15 @@ $custom-tertiary: #fff;
     line-height: 1;
     font-size: 2rem;
     color: $custom-tertiary;
+  }
+
+  .groom, .bride {
+    background: -webkit-linear-gradient(45deg, #9A753E, $custom-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: auto;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -78,7 +88,6 @@ $custom-tertiary: #fff;
 }
 
 .venue-custom {
-  font-size: 1.3rem;
   text-transform: uppercase;
   color: $custom-tertiary;
 }
@@ -108,10 +117,17 @@ $custom-tertiary: #fff;
   .couples,
   .parents,
   .guest {
-    text-transform: capitalize !important;
-    font-style: italic;
+    text-transform: unset !important;
     color: $custom-secondary;
     // font-size: 1.5rem !important;
+  }
+
+  .couples .amp {
+    font-family: $primary-font !important;
+		text-transform: lowercase;
+    color: $custom-tertiary;
+    font-size: 0.9rem;
+    font-weight: normal !important;
   }
 }
 

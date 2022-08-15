@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/var.scss";
 #doa-section {
-  font-family: $secondary-font;
+  font-family: $primary-font;
   font-size: 1rem;
   font-style: italic;
   // font-weight: 300;

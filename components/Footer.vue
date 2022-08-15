@@ -270,7 +270,7 @@ export default {
 @import "~assets/scss/var.scss";
 
 #footer * {
-  font-family: $secondary-font !important;
+  font-family: $primary-font !important;
 }
 #footer {
   position: fixed;

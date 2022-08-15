@@ -120,7 +120,7 @@ export default {
 }
 
 .tag-heading {
-	font-family: $secondary-font;
+	font-family: $primary-font;
 	// margin-bottom: 1rem;
 
 	&.tag-title {
@@ -135,7 +135,7 @@ export default {
 
 .carousel-item .title {
 	padding: 0.5rem 1rem !important;
-	font-family: $secondary-font;
+	font-family: $primary-font;
 }
 
 /* .photo {

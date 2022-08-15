@@ -373,7 +373,7 @@ export default {
 @import "~assets/scss/var.scss";
 
 .section * {
-  font-family: $secondary-font !important;
+  font-family: $primary-font !important;
 }
 
 section,

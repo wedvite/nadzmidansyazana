@@ -31,9 +31,9 @@
   },
   "countdown_end": "2022-10-29 11:00 AM",
   "main_section": {
-    "title": "JEMPUTAN MAJLIS PERKAHWINAN"
   },
   "invitation_section": {
+    "title": "JEMPUTAN MAJLIS PERKAHWINAN",
     "text": "Dengan segala hormatnya kami mempersilakan <br>Tan Sri/Dato'/Datin/Tuan/Puan/Encik/Cik <div class='guest guest-box'><br><\/div>bagi memeriahkan majlis perkahwinan anakanda kami"
   },
   "tentative_section": {
@@ -53,6 +53,9 @@
         "details": "Majlis Berakhir"
       }
     ]
+  },
+  "doa_section": {
+    "text": "“Ya Allah Ya Tuhan Kami.. Jadikanlah rumahtangga kedua mempelai ini seindah rumahtangga Adam dan Hawa, setabah Ibrahim dan Hajar, sebahagia Yusof dan Zulaikha, sesetia Sulaiman dan Balqis serta sesuci Muhammad dan Khadijah. Murahkanlah rezeki mereka, panjangkanlah umur mereka, dekatkan mereka kepada kebaikan , jauhkan mereka dari keburukan dan kurniakanlah mereka kesenangan di dunia dan akhirat.”"
   },
   "social_section": {
     "ig_tags": "HanisForFadzil",

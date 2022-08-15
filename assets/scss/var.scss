@@ -3,14 +3,19 @@
 Default Font 
 */
 @font-face {
-    font-family: 'MYRIADPRO';
-    src: local('MYRIADPRO'),
-        url(~assets/fonts/MYRIADPRO-REGULAR.woff) format('woff');
+    font-family: 'Agnes';
+    src: local('Agnes'),
+        url(~assets/fonts/agnes-bold.ttf) format('truetype');
 }
-$font-url: 'https://fonts.googleapis.com/css?family=Tangerine:wght@700&display=swap|Cormorant+Infant:ital,wght@1,600';
+@font-face {
+    font-family: 'Omnes';
+    src: local('Omnes'),
+        url(~assets/fonts/Omnes.ttf) format('truetype');
+}
+$font-url: 'https://fonts.googleapis.com/css?family=Poppins:wght@500&display=swap';
 
-$cover-font: 'Tangerine', cursive;
-$primary-font: 'Cormorant Infant', serif;
-$secondary-font: 'MYRIADPRO', serif;
-$countdown-font: 'Tangerine', cursive;
+$cover-font: 'Agnes';
+$primary-font: 'Omnes', sans-serif;
+$secondary-font: 'Poppins', sans-serif;
+$countdown-font: 'Agnes';
 // $countdown-font: 'Alex Brush', cursive;

@@ -50,7 +50,7 @@
 					data-aos-duration="1000"
 					v-html="i.groom[i.invitation_section.couple_name_type]"
 				></div>
-				<div data-aos="zoom-in" class="amp">&amp;</div>
+				<div data-aos="zoom-in" class="amp">dengan pasangannya</div>
 				<div
 					:data-aos="
 						i.groom_or_bride_first === 'groom' ? 'fade-left' : 'fade-right'
@@ -151,7 +151,7 @@ export default {
 }
 
 .main-title {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	margin-bottom: 1rem;
 }
 
@@ -172,7 +172,7 @@ export default {
 .couples {
 	display: flex;
 	flex-direction: column;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	font-weight: bold;
 
 	&.reverse {
@@ -195,9 +195,9 @@ export default {
 .parents,
 .couples,
 .guest {
+	font-family: $secondary-font;
 	text-transform: uppercase;
-	font-style: italic;
-	font-weight: bolder;
+	font-weight: bold;
 }
 
 .place,
@@ -213,21 +213,21 @@ export default {
 	.heading-2 {
 		text-transform: uppercase;
 		font-family: $primary-font;
-		font-weight: bolder;
+		font-weight: bold;
 		font-size: 1.2rem;
-		font-style: italic;
 	}
 }
 </style>
 
 <style lang="scss">
+@import "~assets/scss/var.scss";
 .guest.available {
 	display: block;
 	margin: 1rem 0;
 	text-transform: uppercase;
-	font-style: italic;
-	font-size: 1.2rem;
-	font-weight: bolder;
+	font-size: 1.3rem;
+	font-weight: bold;
+	font-family: $secondary-font;
 
 	&.guest-box {
 		padding: 0.5rem 1rem;

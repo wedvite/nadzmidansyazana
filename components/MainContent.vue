@@ -33,6 +33,14 @@
 					{{ i.main_section.title }}
 				</div>
 
+				<img
+					data-aos="zoom-in"
+					data-aos-duration="1000"
+					data-aos-delay="500"
+					src="~/assets/images/line-up.png"
+					style="width: 60%; margin-bottom: 0"
+				/>
+
 				<div
 					class="couples"
 					:class="[
@@ -50,6 +58,7 @@
 						data-aos-offset="0"
 						data-aos-duration="2000"
 						data-aos-delay="500"
+						class="groom"
 					>
 						{{ i.groom[i.main_section.name_type] }}
 					</div>
@@ -68,10 +77,19 @@
 						data-aos-offset="0"
 						data-aos-duration="2000"
 						data-aos-delay="500"
+						class="bride"
 					>
 						{{ i.bride[i.main_section.name_type] }}
 					</div>
 				</div>
+
+				<img
+					data-aos="zoom-in"
+					data-aos-duration="1000"
+					data-aos-delay="500"
+					src="~/assets/images/line-down.png"
+					style="width: 60%; margin-top: 0; margin-bottom: 1rem"
+				/>
 
 				<div
 					data-aos="zoom-in"
@@ -147,6 +165,7 @@ export default {
 
 .main-content-title {
 	margin-bottom: 0.5rem;
+	font-size: 1rem;
 }
 
 .couples {
@@ -154,8 +173,8 @@ export default {
 	flex-direction: column;
 	font-family: $cover-font;
 	font-size: 4rem;
-	margin-bottom: 1rem;
-	line-height: 1.3;
+	// margin-bottom: 1rem;
+	line-height: 0.9;
 
 	&.reverse {
 		flex-direction: column-reverse;
@@ -175,7 +194,6 @@ export default {
 .date-gregorian {
 	.month, .year {
 		display: block;
-    font-size: 1em;
     letter-spacing: 2px;
     font-size: 1rem;
 	}
