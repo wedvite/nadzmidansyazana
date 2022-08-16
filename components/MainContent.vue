@@ -22,6 +22,14 @@
 		</div>
 		<div class="hero-body">
 			<div v-if="!i.override_main" class="container has-text-centered">
+				<img
+					data-aos="zoom-in"
+					data-aos-duration="1000"
+					data-aos-delay="500"
+					src="~/assets/images/bismillah-white.png"
+					alt="bismillahirrahmanirrahim"
+					style="width: 35%; margin-bottom: 0.5rem"
+				/>
 				<div
 					data-aos="zoom-in"
 					data-aos-offset="0"

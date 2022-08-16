@@ -8,7 +8,8 @@
         >
           <div class="level">
             <span class="level-item">
-              <fa :icon="['fas', 'address-book']" class="icon fa-x"></fa>Hubungi
+              <fa :icon="['fas', 'address-book']" class="icon fa-x"></fa>
+              <span style="margin-top: 2px">Hubungi</span>
             </span>
           </div>
         </span>
@@ -21,7 +22,8 @@
         >
           <div class="level">
             <div class="level-item">
-              <fa icon="calendar-alt" class="icon fa-1x"></fa>Kalendar
+              <fa icon="calendar-alt" class="icon fa-1x"></fa>
+              <span style="margin-top: 2px">Kalendar</span>
             </div>
           </div>
         </span>

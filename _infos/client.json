@@ -60,10 +60,18 @@
   "social_section": {
     "ig_tags": "HanisForFadzil",
     "ig_signature": null,
-    "carouselAutoplay": false,
+    "carouselAutoplay": true,
     "images": [
       {
-        "src": "/images/sample-1.jpg",
+        "src": "/images/ring.jpeg",
+        "_htmlTitle": "Hey sayangku!"
+      },
+      {
+        "src": "/images/hantaran.jpeg",
+        "_htmlTitle": "Hey sayangku!"
+      },
+      {
+        "src": "/images/us.jpeg",
         "_htmlTitle": "Hey sayangku!"
       }
     ]

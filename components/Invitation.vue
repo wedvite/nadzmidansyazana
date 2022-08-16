@@ -6,11 +6,17 @@
 			style="width: 100%; margin-bottom: 0"
 		/>
 
-		<img
+		<!-- <img
 			data-aos="zoom-in"
 			src="~/assets/images/bismillah-white.png"
 			alt="bismillahirrahmanirrahim"
 			style="height: 50px; margin-bottom: 1rem"
+		/> -->
+		<img
+			data-aos="zoom-in"
+			src="~/assets/images/assalamualaikum-white.png"
+			alt="assalamualaikum"
+			style="width: 50%; margin-bottom: 0"
 		/>
 		<div>
 			<div
