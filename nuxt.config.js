@@ -34,9 +34,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "Wedding Invitation Website (Wedvite)" },
+      { hid: 'description', name: 'description', content: "You are Invited" },
       { name: 'keywords', content: 'Wedding Invitation Website, Fadzil Jusri, fadziljusri, wedvite, Freelancer, undangan kahwin, perkahwinan, ' + cfg.name },
-      { name: 'author', content: 'Fadzil Jusri' }
+      { name: 'author', content: 'Fadzil Jusri' },
+      { property: 'og:image', content: '/images/us.jpeg' },
+      { property: 'og:image:secure_url', content: '/images/us.jpeg' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: `/favicon.ico` },
