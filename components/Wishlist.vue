@@ -9,6 +9,10 @@
       Wishlist
     </div>
 
+    <div class="is-italic has-text-centered" style="margin-bottom: 2rem">
+      Ini adalah bertujuan untuk memberi beberapa idea jika anda tertanya-tanya apa yang boleh anda hadiahkan kepada kami. Tidak mengapa jika anda tidak merujuk kepada senarai ini dan ianya juga bukanlah perkara yang wajib untuk dilaksanakan.
+    </div>
+
     <table
       data-aos="flip-up"
       data-aos-offset="200"
