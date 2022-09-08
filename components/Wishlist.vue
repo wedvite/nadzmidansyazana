@@ -25,6 +25,17 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><b>Have something else in mind?</b></td>
+          <td>
+            <button
+                class="button is-small is-fullwidth bg-custom"
+                @click.prevent="openSponsorModalNew()"
+              >
+                CLICK TO SPONSOR
+              </button>
+          </td>
+        </tr>
         <tr v-for="list in filteredWishlist" :key="list.id">
           <td>{{ list.item }}</td>
           <td>
@@ -59,7 +70,7 @@
 
     <!-- sponsor modal -->
     <div
-      v-if="wishlist.length && wishlist[selectedListIndex]"
+      v-if="(list && (list.byGuest || list.id))"
       class="modal modal-fx-slideBottom modal-pos-bottom"
       :class="{ 'is-active': sponsorModal }"
     >
@@ -69,7 +80,24 @@
       ></div>
       <div class="modal-content">
         <div class="box" :class="'bgi-' + theme">
-          <div class="title is-3">{{ wishlist[selectedListIndex].item }}</div>
+          <div v-show="list.item && list.id" class="title is-3">{{ list.item }}</div>
+
+          <div v-show="list.byGuest" class="columns is-mobile">
+            <div class="column">
+              <div class="field">
+                <label class="label">Item</label>
+                <div class="control">
+                  <input
+                    class="input is-rounded"
+                    type="text"
+                    v-model="list.item"
+                    placeholder="Item"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="columns is-mobile">
             <div class="column">
               <div class="field">
@@ -140,6 +168,7 @@ export default {
     return {
       list: {
         anon: false,
+        item: "",
         sponsoredBy: "",
       },
       selectedListIndex: null,
@@ -153,7 +182,7 @@ export default {
       isLoading: (state) => state.wishlist.loading,
     }),
     isValid() {
-      return Boolean(this.list.sponsoredBy || this.list.anon);
+      return Boolean((this.list.sponsoredBy || this.list.anon) && this.list.item);
     },
     filteredWishlist() {
       if (this.showAll) {
@@ -171,11 +200,20 @@ export default {
       this.list.sponsoredBy = rsvpData?.details.name || "";
     } catch (error) {}
 
+    this.initialList = cloneDeep(this.list);
+
     this.$store.dispatch("wishlist/getWishlist");
   },
   methods: {
+    openSponsorModalNew() {
+      this.list = cloneDeep({
+        ...this.initialList,
+        byGuest: true
+      })
+      this.sponsorModal = true;
+    },
     openSponsorModal(list) {
-      this.selectedListIndex = this.wishlist.findIndex((e) => e.id === list.id);
+      this.list = cloneDeep(this.wishlist.find((e) => e.id === list.id));
       this.sponsorModal = true;
     },
     cancel() {
@@ -188,8 +226,14 @@ export default {
         this.list.sponsoredBy = "Anonymous";
       }
 
+      // console.log(({
+      //   ...this.list,
+      //   sponsoredBy: this.list.sponsoredBy,
+      // }));
+      // return
+
       const list = cloneDeep({
-        ...this.wishlist[this.selectedListIndex],
+        ...this.list,
         sponsoredBy: this.list.sponsoredBy,
       });
 
