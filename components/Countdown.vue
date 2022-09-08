@@ -72,7 +72,7 @@ export default {
     }),
   },
   created() {
-    this.endDate = new Date(this.countdown_end).getTime();
+    this.endDate = new Date(this.countdown_end.replace(/-/g, "/")).getTime();
     if (isNaN(this.endDate)) {
       return;
     }
