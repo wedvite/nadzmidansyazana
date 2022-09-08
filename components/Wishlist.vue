@@ -85,13 +85,13 @@
           <div v-show="list.byGuest" class="columns is-mobile">
             <div class="column">
               <div class="field">
-                <label class="label">Item</label>
+                <label class="label">Hadiah</label>
                 <div class="control">
                   <input
                     class="input is-rounded"
                     type="text"
                     v-model="list.item"
-                    placeholder="Item"
+                    placeholder="Hadiah"
                   />
                 </div>
               </div>
