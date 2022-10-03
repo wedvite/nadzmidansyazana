@@ -27,7 +27,7 @@ export const INFO_MS = {
     "tentatives": []
   },
   "doa_section": {
-    "text": "\“Ya Allah Ya Rahman Ya Rahim, berkatilah majlis perkahwinan ini. Limpahkanlah baraqah dan rahmat kepada kedua mempelai. Kurniakanlah mereka kelak zuriat yang soleh dan solehah. Kekalkanlah jodoh mereka hingga ke jannah,juga sempurnakanlah agama mereka dengan berkat ikatan ini.\”"
+    "text": "\“Ya Allah Ya Rahman Ya Rahim, berkatilah majlis perkahwinan ini. Limpahkanlah baraqah dan rahmat kepada kedua mempelai. Kurniakanlah mereka kelak zuriat yang soleh dan solehah. Kekalkanlah jodoh mereka hingga ke jannah, juga sempurnakanlah agama mereka dengan berkat ikatan ini.\”"
   },
   "countdown_section": {
     "days": "hari",

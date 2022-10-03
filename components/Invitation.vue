@@ -1,23 +1,21 @@
 <template>
-	<section id="invitation" class="section has-text-centered">
-		<img
-			data-aos="zoom-in"
-			src="~/assets/images/line-up.png"
-			style="width: 100%; margin-bottom: 0"
-		/>
-
+	<section
+		id="invitation"
+		class="hero is-fullheight has-text-centered bg-image-custom"
+		style="justify-content: center"
+	>
 		<!-- <img
 			data-aos="zoom-in"
 			src="~/assets/images/bismillah-white.png"
 			alt="bismillahirrahmanirrahim"
 			style="height: 50px; margin-bottom: 1rem"
 		/> -->
-		<img
+		<!-- <img
 			data-aos="zoom-in"
 			src="~/assets/images/assalamualaikum-white.png"
 			alt="assalamualaikum"
 			style="width: 50%; margin-bottom: 0"
-		/>
+		/> -->
 		<div>
 			<div
 				data-aos="zoom-in"
@@ -45,13 +43,22 @@
 				v-html="i.invitation_section.text"
 			/>
 
-			<div
+			<img
+				data-aos="zoom-in"
+				src="~/assets/images/custom/namafullpengantin.png"
+				alt="namafullpengantin"
+				style="width: 100%; margin-bottom: 1rem"
+			/>
+
+			<!-- <div
 				class="couples"
 				:class="{ reverse: i.groom_or_bride_first === 'bride' }"
 			>
 				<div
 					:data-aos="
-						i.groom_or_bride_first === 'bride' ? 'fade-left' : 'fade-right'
+						i.groom_or_bride_first === 'bride'
+							? 'fade-left'
+							: 'fade-right'
 					"
 					data-aos-duration="1000"
 					v-html="i.groom[i.invitation_section.couple_name_type]"
@@ -59,18 +66,27 @@
 				<div data-aos="zoom-in" class="amp">dengan pasangannya</div>
 				<div
 					:data-aos="
-						i.groom_or_bride_first === 'groom' ? 'fade-left' : 'fade-right'
+						i.groom_or_bride_first === 'groom'
+							? 'fade-left'
+							: 'fade-right'
 					"
 					data-aos-duration="1000"
 					v-html="i.bride[i.invitation_section.couple_name_type]"
 				></div>
-			</div>
+			</div> -->
 
-			<div class="date">
+			<img
+				data-aos="zoom-in"
+				src="~/assets/images/custom/info-majlis.png"
+				alt="info-majlis"
+				style="width: 80%"
+			/>
+
+			<!-- <div class="date">
 				<div data-aos="zoom-in" class="heading-1">
 					{{ i.lang === "en" ? "on" : "Pada" }}
 				</div>
-				<!-- <div data-aos="zoom-in" class="intro-sub">on</div> -->
+				<div data-aos="zoom-in" class="intro-sub">on</div>
 				<div data-aos="zoom-in" class="heading-2">{{ i.date.greg }}</div>
 				<div data-aos="zoom-in" class="heading-2" v-if="i.day">
 					{{ i.day }}
@@ -81,7 +97,7 @@
 				<div data-aos="zoom-in" class="heading-1">
 					{{ i.lang === "en" ? "from" : "Masa" }}
 				</div>
-				<!-- <div data-aos="zoom-in" class="intro-sub">at</div> -->
+				<div data-aos="zoom-in" class="intro-sub">at</div>
 				<div data-aos="zoom-in" class="heading-2">
 					{{ i.time.from }} - {{ i.time.to }}
 				</div>
@@ -91,20 +107,14 @@
 				<div data-aos="zoom-in" class="heading-1">
 					{{ i.lang === "en" ? "at" : "Bertempat di" }}
 				</div>
-				<!-- <div data-aos="zoom-in" class="intro-sub">at</div> -->
+				<div data-aos="zoom-in" class="intro-sub">at</div>
 				<div
 					data-aos="zoom-in"
 					class="heading-2"
 					v-html="i.address.exact_html"
 				></div>
-			</div>
+			</div> -->
 		</div>
-
-		<img
-			data-aos="zoom-in"
-			src="~/assets/images/line-down.png"
-			style="width: 100%; margin-top: 0.5rem"
-		/>
 	</section>
 </template>
 
@@ -153,6 +163,7 @@ export default {
 @import "~assets/scss/var.scss";
 #invitation {
 	font-family: $primary-font;
+	background-size: 100% 100%;
 	// text-transform: uppercase;
 }
 
@@ -237,8 +248,8 @@ export default {
 
 	&.guest-box {
 		padding: 0.5rem 1rem;
-		border-radius: 10px;
-		border: 1px solid #4a4a4a;
+		// border-radius: 10px;
+		// border: 1px solid #4a4a4a;
 		word-wrap: break-word;
 	}
 }

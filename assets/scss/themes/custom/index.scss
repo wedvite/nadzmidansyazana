@@ -1,7 +1,7 @@
 // Custom theme
-$custom-primary: #242053;
-$custom-secondary: #F7D075;
-$custom-tertiary: #fff;
+$custom-primary: #EFEADE;
+$custom-secondary: #A7863F;
+$custom-tertiary: #A7863F;
 
 @import "~assets/scss/var.scss";
 
@@ -12,16 +12,16 @@ $custom-tertiary: #fff;
 }
 
 .bg-image-custom {
-  background-image: url("~assets/frames/custom/custom.jpeg");
+  background-image: url("~assets/frames/custom/custom.png");
   background-size: 100% auto;
   background-position: center center;
 }
 
 .bgi-custom {
-  background-color: $custom-primary !important;
-  // background-image: url("~assets/frames/custom/custom.jpeg");
-  // background-size: 100% auto;
-  // background-position: center center;
+  // background-color: $custom-primary !important;
+  background-image: url("~assets/frames/custom/custom.png");
+  background-size: 100% auto;
+  background-position: center center;
   color: $custom-secondary !important;
 }
 
@@ -30,17 +30,9 @@ $custom-tertiary: #fff;
 }
 
 .txt-dark-custom {
-  color: $custom-primary !important;
+  color: #4a4a4a !important;
 }
 
-.guest.available {
-  color: $custom-secondary !important;
-
-  &.guest-box {
-    background: $custom-primary !important;
-    border: 1px solid $custom-secondary !important;
-  }
-}
 
 // Main Section
 .title-custom {
@@ -62,7 +54,8 @@ $custom-tertiary: #fff;
     color: $custom-tertiary;
   }
 
-  .groom, .bride {
+  .groom,
+  .bride {
     background: -webkit-linear-gradient(45deg, #9A753E, $custom-secondary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -103,38 +96,61 @@ $custom-tertiary: #fff;
 }
 
 #invitation {
-  // background-image: url("~assets/frames/custom/custom.jpeg");
+  // background-image: url("~assets/frames/custom/custom.png");
   // background-size: 100% 100%;
   // background-position: center center;
   background-color: $custom-primary;
   color: $custom-tertiary;
-  padding: 1.5rem !important;
+  padding: 10rem 1.5rem !important;
+
   .main-title {
-    text-transform: uppercase !important;
+    text-transform: capitalize !important;
   }
 
   .couples,
-  .parents,
-  .guest {
-    text-transform: unset !important;
+  .parents {
+    text-transform: uppercase !important;
     color: $custom-secondary;
     // font-size: 1.5rem !important;
   }
 
+  .guest {
+    color: $custom-secondary;
+    margin: 1.5rem auto;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvsAAAASCAYAAADFVREtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA1xJREFUeNrs3UFy0zAUgGGJ4QDhBu4JgBM0PQHtkhXpCWi3bNpu2KY5QdIVS9ITJD1BwwkwN/AReG8qgxMsW7bkjJn5vxmNC3ViJe48PUuybEwi376enhsAAAAAMTl1JuVdqvd7lahSt7JZynbCKQIAAAB6m0nZpMqro5N9qYhW6EaKVuiK8wMAAAD0yqs1n/7s8uokCb9NkOgvD/77/ccvTztOFwCMpuHQjphPUrLKr9ZSFhKvt3xLADCamP1dNtWp8ZpTn0msLo6e7Etl5qa+J79wldo1vFZfN5F9bjmtADBYo6HJvTYcTXM/LyUWr/i2AGCwWDxxsfiiKWmX/bQDfVbzq52L1b06022PCk9lM29pPLwJf2U0QPfRUYCcPwMAGKSBeW6J1SVtgNZ8YwAwSCwuO8hre+ndxcDck+hX3Um579rLbztUVJN8nZs/7fD+e5VyN/LeHFypRA1NAABqY/aVazxCFBKH3/CtAUDyWKwJ/PIg9/3TSx/Yib4Xr6UsuiT9tqWCemCd56lzh7KenzOX8mD+nS9arfQ1w8gAkLSBCe3VL50xfx8AksXgzCXxvqXpy7x3FnEYfY9HKdumxN+6Ck1co1Bu35qXHvxjLqWZuwIAiDclBgPAfxODY+lIwVbKL/dzUY4eWDd8YCrJ/mnlZwAAAADjp8l+Xk349d/eaTxu+EEvBD4Y/xBEl4M3XeHo3P4VN+sCQBo9pvFwky4ApIvBM/Nyn2rm2aXMebOIw+h7aNx+bJqGaQMr7FunOSTJ15sQcs/cpdZlOgEAvRoa3/LIdTQWn7BYAgAkj8WHy2nu3avqFlMoH04bSl/7EHqfVZ+lN0MrpR/kvqUB4gFcADBMA6Mx+mdgA3LHc08AYLB4XD4oq3a9/MBnoqite33e5fi2Z6W1UnqlMvXs0viQFneVY2SfS/4EAGCwBkYbjk1Lwr8iFgPAoLFY82adWumdzeI6aDaehD9q5UobWfm6J30FPY1RPxRDxgBwlIRfR1SnNY3Hgh59ADhKLG7Nez0Jf/SUd5ug8tWEfy2VueCUAsDoGprM/L3nqmAKJQCMMlZrov9cSfSj76eyiSpWJvwnrKgDAAAAROXVOsc/ySI2rxPV61rKDxJ9AAAAIIouSf+UagT2twADAB0oQpVpqSg1AAAAAElFTkSuQmCC);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .guest.available {
+
+    // &.guest-box {
+    //   background: $custom-primary !important;
+    //   border: 1px solid $custom-secondary !important;
+    // }
+  }
+
+
   .couples .amp {
     font-family: $primary-font !important;
-		text-transform: lowercase;
+    text-transform: lowercase;
     color: $custom-tertiary;
     font-size: 0.9rem;
     font-weight: normal !important;
+    line-height: 0.8;
   }
 }
 
 #tentative {
-  background-color: $custom-tertiary !important;
+  background-color: #fff !important;
   color: #4a4a4a !important;
-  // color: $custom-;
-  // background-image: url("~assets/frames/custom/custom.jpeg");
-  // background-size: 100% auto;
-  // background-position: center center;
+}
+
+#doa-section {
+  // background-color: $custom-primary !important;
+  color: $custom-secondary;
+  background-image: url("~assets/frames/custom/custom.png");
+  background-size: 100% auto;
+  background-position: center center;
 }

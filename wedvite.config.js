@@ -1,12 +1,13 @@
 
 // Demo
-export const project = 'hanisfadzil';
-export const wishlistDoc = "hanisfadzil";
-export const projectTitle = 'Hanis & Fadzil';
+export const project = 'syudanaffan';
+export const wishlistDoc = "syudanaffan";
+export const projectTitle = 'Syu & \'Affan';
 
 export const allowedEmails = [
-  "fadziljusri@gmail.com",
-  "nurhanismohdshukri@gmail.com"
+  // "fadziljusri@gmail.com",
+  "a.doublef.a.n@gmail.com",
+  "nsyuhada.zulkifli@gmail.com"
 ]
 
 export const fireStore = {
@@ -52,5 +53,5 @@ export const userData = require(`./_infos/client.json`);
 
 export const cfg = {
   name: project,
-  title: "Walimatulurus - " + projectTitle,
+  title: "Walimatul Urus - " + projectTitle,
 }

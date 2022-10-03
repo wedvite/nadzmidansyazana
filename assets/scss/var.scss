@@ -3,19 +3,25 @@
 Default Font 
 */
 @font-face {
-    font-family: 'Agnes';
-    src: local('Agnes'),
-        url(~assets/fonts/agnes-bold.ttf) format('truetype');
+    font-family: 'ChopinScript';
+    src: local('ChopinScript'),
+        url(~assets/fonts/ChopinScript.otf) format('opentype');
 }
 @font-face {
-    font-family: 'Omnes';
-    src: local('Omnes'),
-        url(~assets/fonts/Omnes.ttf) format('truetype');
+    font-family: 'Bodini';
+    src: local('Bodini'),
+        url(~assets/fonts/Bodoni72-OldStyle.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Perpetua';
+    src: local('Perpetua'),
+        url(~assets/fonts/perpetua.ttf) format('truetype');
 }
 $font-url: 'https://fonts.googleapis.com/css?family=Poppins:wght@500&display=swap';
 
-$cover-font: 'Agnes';
-$primary-font: 'Omnes', sans-serif;
-$secondary-font: 'Poppins', sans-serif;
-$countdown-font: 'Agnes';
+$cover-font: 'ChopinScript';
+$primary-font: 'Bodini', sans-serif;
+$secondary-font: 'Perpetua', sans-serif;
+$countdown-font: 'ChopinScript';
 // $countdown-font: 'Alex Brush', cursive;

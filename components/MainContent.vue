@@ -22,15 +22,17 @@
 		</div>
 		<div class="hero-body">
 			<div v-if="!i.override_main" class="container has-text-centered">
-				<img
-					data-aos="zoom-in"
-					data-aos-duration="1000"
-					data-aos-delay="500"
-					src="~/assets/images/bismillah-white.png"
-					alt="bismillahirrahmanirrahim"
-					style="width: 35%; margin-bottom: 0.5rem"
-				/>
-				<div
+				<div>
+					<img
+						data-aos="zoom-in"
+						data-aos-duration="1000"
+						data-aos-delay="500"
+						src="~/assets/images/custom/walimatulurus.png"
+						alt="walimatulurus"
+						style="width: 40%; margin-bottom: 1rem"
+					/>
+				</div>
+				<!-- <div
 					data-aos="zoom-in"
 					data-aos-offset="0"
 					data-aos-duration="1000"
@@ -39,17 +41,18 @@
 					:class="'title-' + i.theme"
 				>
 					{{ i.main_section.title }}
-				</div>
+				</div> -->
 
 				<img
 					data-aos="zoom-in"
-					data-aos-duration="1000"
+					data-aos-duration="2000"
 					data-aos-delay="500"
-					src="~/assets/images/line-up.png"
-					style="width: 60%; margin-bottom: 0"
+					src="~/assets/images/custom/Syu-'Affan.png"
+					alt="Syu-'Affan"
+					style="width: 50%; margin-bottom: 1rem"
 				/>
 
-				<div
+				<!-- <div
 					class="couples"
 					:class="[
 						'couples-' + i.theme,
@@ -89,17 +92,18 @@
 					>
 						{{ i.bride[i.main_section.name_type] }}
 					</div>
-				</div>
+				</div> -->
 
 				<img
-					data-aos="zoom-in"
+					data-aos="fade-right"
 					data-aos-duration="1000"
 					data-aos-delay="500"
-					src="~/assets/images/line-down.png"
-					style="width: 60%; margin-top: 0; margin-bottom: 1rem"
+					src="~/assets/images/custom/date-time-venue.png"
+					alt="date-time-venue"
+					style="width: 90%"
 				/>
 
-				<div
+				<!-- <div
 					data-aos="zoom-in"
 					data-aos-offset="0"
 					data-aos-duration="1000"
@@ -107,23 +111,24 @@
 					class="dates"
 					:class="'dates-' + i.theme"
 				>
-					<!-- <div class="date-gregorian">{{ i.date.greg }}</div> -->
 
-					<div class="date-gregorian">
-						<span class="month">Oktober</span>
+					<div v-if="i.date.gregBox" class="date-gregorian">
+						<span class="month"> {{ i.date.gregBox.month }}</span>
 						<span>
-							<span class="day">Sabtu</span>
-							<span class="day-number">29</span>
-							<span class="time">11.00AM</span>
+							<span class="day">{{ i.date.gregBox.day }}</span>
+							<span class="day-number">{{ i.date.gregBox.dayNumber }}</span>
+							<span class="time">{{ i.date.gregBox.time }}</span>
 						</span>
-						<span class="year">2022</span>
+						<span class="year">{{ i.date.gregBox.year }}</span>
 					</div>
+					<div v-else-if="i.date.greg" class="date-gregorian">{{ i.date.greg }}</div>
+
 					<div v-if="i.date.hijri" class="date-hijri">
 						{{ i.date.hijri }}
 					</div>
-				</div>
+				</div> -->
 
-				<div
+				<!-- <div
 					data-aos="zoom-in"
 					data-aos-offset="0"
 					data-aos-duration="1000"
@@ -131,7 +136,7 @@
 					class="venue"
 					:class="'venue-' + i.theme"
 					v-html="i.address.general"
-				></div>
+				></div> -->
 			</div>
 		</div>
 	</section>
@@ -200,30 +205,32 @@ export default {
 }
 
 .date-gregorian {
-	.month, .year {
+	.month,
+	.year {
 		display: block;
-    letter-spacing: 2px;
-    font-size: 1rem;
+		letter-spacing: 2px;
+		font-size: 1rem;
 	}
 
-	.day, .time {
+	.day,
+	.time {
 		display: inline-block;
-    padding: 0px 5px;
-    text-align: center;
-    vertical-align: middle;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    font-size: 1rem;
+		padding: 0px 5px;
+		text-align: center;
+		vertical-align: middle;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		font-size: 1rem;
 		width: 70px;
 	}
 
 	.day-number {
 		display: inline-block;
-    padding: 0px 5px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 3.5rem;
-    line-height: 1;
+		padding: 0px 5px;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 3.5rem;
+		line-height: 1;
 	}
 }
 

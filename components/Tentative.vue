@@ -75,9 +75,12 @@ export default {
 }
 
 .main-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  // font-size: 1rem;
+  // margin-bottom: 1rem;
+  // font-weight: bold;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-family: $countdown-font !important;
 }
 
 .tentatives {
