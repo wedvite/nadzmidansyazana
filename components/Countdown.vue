@@ -111,7 +111,7 @@ export default {
 @import "~assets/scss/var.scss";
 .main-title {
   font-family: $countdown-font !important;
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
   line-height: 1;
 }

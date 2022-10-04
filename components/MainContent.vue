@@ -29,7 +29,7 @@
 						data-aos-delay="500"
 						src="~/assets/images/custom/walimatulurus.png"
 						alt="walimatulurus"
-						style="width: 40%; margin-bottom: 1rem"
+						style="width: 50%; margin-bottom: 1.5rem"
 					/>
 				</div>
 				<!-- <div
@@ -49,7 +49,7 @@
 					data-aos-delay="500"
 					src="~/assets/images/custom/Syu-'Affan.png"
 					alt="Syu-'Affan"
-					style="width: 50%; margin-bottom: 1rem"
+					style="width: 60%; margin-bottom: 1.5rem"
 				/>
 
 				<!-- <div
@@ -100,7 +100,7 @@
 					data-aos-delay="500"
 					src="~/assets/images/custom/date-time-venue.png"
 					alt="date-time-venue"
-					style="width: 90%"
+					style="width: 95%"
 				/>
 
 				<!-- <div

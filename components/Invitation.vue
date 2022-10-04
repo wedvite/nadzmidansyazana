@@ -17,15 +17,27 @@
 			style="width: 50%; margin-bottom: 0"
 		/> -->
 		<div>
-			<div
+			<img
+				data-aos="zoom-in"
+				src="~/assets/images/custom/assalamualaikum.png"
+				alt="assalamualaikum"
+				style="width: 65%; margin-bottom: 1.5rem"
+			/>
+			<!-- <div
 				data-aos="zoom-in"
 				v-if="i.invitation_section.title"
 				class="main-title"
 			>
 				{{ i.invitation_section.title }}
-			</div>
+			</div> -->
 
-			<div v-if="i.invitation_section.show_parents" class="parents">
+			<img
+				data-aos="zoom-in"
+				src="~/assets/images/custom/parents.png"
+				alt="parents"
+				style="width: 90%; margin-bottom: 1.5rem"
+			/>
+			<!-- <div v-if="i.invitation_section.show_parents" class="parents">
 				<div data-aos="zoom-out-left" data-aos-duration="1000">
 					{{ i.parents.name }}
 				</div>
@@ -35,19 +47,37 @@
 						{{ i.parents.andWith }}
 					</div>
 				</template>
-			</div>
+			</div> -->
 
-			<div
+			<!-- <div
 				data-aos="zoom-in"
 				class="intro"
 				v-html="i.invitation_section.text"
+			/> -->
+
+			<img
+				data-aos="zoom-in"
+				src="~/assets/images/custom/invitetext-1.png"
+				alt="invitetext-1"
+				style="width: 65%; margin-bottom: 1.5rem"
+			/>
+
+			<div data-aos="zoom-in" class="guest guest-box">
+				<br />
+			</div>
+
+			<img
+				data-aos="zoom-in"
+				src="~/assets/images/custom/invitetext-2.png"
+				alt="invitetext-2"
+				style="width: 65%; margin-bottom: 1.5rem"
 			/>
 
 			<img
 				data-aos="zoom-in"
 				src="~/assets/images/custom/namafullpengantin.png"
 				alt="namafullpengantin"
-				style="width: 100%; margin-bottom: 1rem"
+				style="width: 100%; margin-bottom: 1.5rem"
 			/>
 
 			<!-- <div
@@ -79,7 +109,7 @@
 				data-aos="zoom-in"
 				src="~/assets/images/custom/info-majlis.png"
 				alt="info-majlis"
-				style="width: 80%"
+				style="width: 100%; margin-bottom: 1rem"
 			/>
 
 			<!-- <div class="date">

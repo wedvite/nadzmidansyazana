@@ -78,7 +78,7 @@ export default {
   // font-size: 1rem;
   // margin-bottom: 1rem;
   // font-weight: bold;
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
   font-family: $countdown-font !important;
 }

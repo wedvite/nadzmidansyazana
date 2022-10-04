@@ -115,21 +115,22 @@ $custom-tertiary: #A7863F;
   }
 
   .guest {
+    text-transform: unset !important;
     color: $custom-secondary;
-    margin: 1.5rem auto;
+    margin-top: 0rem;
+    margin-bottom: 1.5rem;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvsAAAASCAYAAADFVREtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA1xJREFUeNrs3UFy0zAUgGGJ4QDhBu4JgBM0PQHtkhXpCWi3bNpu2KY5QdIVS9ITJD1BwwkwN/AReG8qgxMsW7bkjJn5vxmNC3ViJe48PUuybEwi376enhsAAAAAMTl1JuVdqvd7lahSt7JZynbCKQIAAAB6m0nZpMqro5N9qYhW6EaKVuiK8wMAAAD0yqs1n/7s8uokCb9NkOgvD/77/ccvTztOFwCMpuHQjphPUrLKr9ZSFhKvt3xLADCamP1dNtWp8ZpTn0msLo6e7Etl5qa+J79wldo1vFZfN5F9bjmtADBYo6HJvTYcTXM/LyUWr/i2AGCwWDxxsfiiKWmX/bQDfVbzq52L1b06022PCk9lM29pPLwJf2U0QPfRUYCcPwMAGKSBeW6J1SVtgNZ8YwAwSCwuO8hre+ndxcDck+hX3Um579rLbztUVJN8nZs/7fD+e5VyN/LeHFypRA1NAABqY/aVazxCFBKH3/CtAUDyWKwJ/PIg9/3TSx/Yib4Xr6UsuiT9tqWCemCd56lzh7KenzOX8mD+nS9arfQ1w8gAkLSBCe3VL50xfx8AksXgzCXxvqXpy7x3FnEYfY9HKdumxN+6Ck1co1Bu35qXHvxjLqWZuwIAiDclBgPAfxODY+lIwVbKL/dzUY4eWDd8YCrJ/mnlZwAAAADjp8l+Xk349d/eaTxu+EEvBD4Y/xBEl4M3XeHo3P4VN+sCQBo9pvFwky4ApIvBM/Nyn2rm2aXMebOIw+h7aNx+bJqGaQMr7FunOSTJ15sQcs/cpdZlOgEAvRoa3/LIdTQWn7BYAgAkj8WHy2nu3avqFlMoH04bSl/7EHqfVZ+lN0MrpR/kvqUB4gFcADBMA6Mx+mdgA3LHc08AYLB4XD4oq3a9/MBnoqite33e5fi2Z6W1UnqlMvXs0viQFneVY2SfS/4EAGCwBkYbjk1Lwr8iFgPAoLFY82adWumdzeI6aDaehD9q5UobWfm6J30FPY1RPxRDxgBwlIRfR1SnNY3Hgh59ADhKLG7Nez0Jf/SUd5ug8tWEfy2VueCUAsDoGprM/L3nqmAKJQCMMlZrov9cSfSj76eyiSpWJvwnrKgDAAAAROXVOsc/ySI2rxPV61rKDxJ9AAAAIIouSf+UagT2twADAB0oQpVpqSg1AAAAAElFTkSuQmCC);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
   }
 
-  .guest.available {
-
-    // &.guest-box {
-    //   background: $custom-primary !important;
-    //   border: 1px solid $custom-secondary !important;
-    // }
-  }
+  // .guest.available {
+  //   // &.guest-box {
+  //   //   background: $custom-primary !important;
+  //   //   border: 1px solid $custom-secondary !important;
+  //   // }
+  // }
 
 
   .couples .amp {
@@ -150,7 +151,7 @@ $custom-tertiary: #A7863F;
 #doa-section {
   // background-color: $custom-primary !important;
   color: $custom-secondary;
-  background-image: url("~assets/frames/custom/custom.png");
-  background-size: 100% auto;
+  background-image: url("~assets/frames/custom/bgdoa.png");
+  background-size: 100% 100%;
   background-position: center center;
 }
