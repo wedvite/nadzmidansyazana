@@ -70,7 +70,7 @@
 				data-aos="zoom-in"
 				src="~/assets/images/custom/invitetext-2.png"
 				alt="invitetext-2"
-				style="width: 65%; margin-bottom: 1.5rem"
+				style="width: 60%; margin-bottom: 1.5rem"
 			/>
 
 			<img
