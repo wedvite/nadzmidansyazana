@@ -380,7 +380,7 @@ section,
 .text-confirm,
 .label,
 .title {
-  color: unset !important;
+  color: #a6853e !important;
 }
 
 .fa {

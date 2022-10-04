@@ -30,7 +30,11 @@ $custom-tertiary: #a6853e;
 }
 
 .txt-dark-custom {
-  color: #4a4a4a !important;
+  color: $custom-secondary !important;
+}
+
+.title {
+  color: $custom-secondary !important;
 }
 
 
@@ -145,7 +149,7 @@ $custom-tertiary: #a6853e;
 
 #tentative {
   background-color: #fff !important;
-  color: #4a4a4a !important;
+  color: #a6853e !important;
 }
 
 #doa-section {
