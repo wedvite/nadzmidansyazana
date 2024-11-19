@@ -126,6 +126,7 @@ export default {
 p.title,
 p.heading,
 .tag {
+  color: #F7F7F7 !important;
 	font-family: $primary-font;
 }
 </style>
