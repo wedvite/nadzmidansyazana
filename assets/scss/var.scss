@@ -7,11 +7,11 @@ Default Font
     src: local('ChopinScript'),
         url(~assets/fonts/ChopinScript.otf) format('opentype');
 }
-@font-face {
-    font-family: 'Bodini';
-    src: local('Bodini'),
-        url(~assets/fonts/Bodoni72-OldStyle.ttf) format('truetype');
-}
+// @font-face {
+//     font-family: 'Bodini';
+//     src: local('Bodini'),
+//         url(~assets/fonts/Bodoni72-OldStyle.ttf) format('truetype');
+// }
 
 @font-face {
     font-family: 'Perpetua';
@@ -21,7 +21,7 @@ Default Font
 $font-url: 'https://fonts.googleapis.com/css?family=Poppins:wght@500&display=swap';
 
 $cover-font: 'ChopinScript';
-$primary-font: 'Bodini', sans-serif;
+$primary-font: 'Perpetua', sans-serif;
 $secondary-font: 'Perpetua', sans-serif;
 $countdown-font: 'ChopinScript';
 // $countdown-font: 'Alex Brush', cursive;

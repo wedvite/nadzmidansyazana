@@ -92,7 +92,7 @@
         <div class="media-content">
           <div class="content is-marginless">
             <div data-aos="fade-right">
-              <strong>{{ i.details.name }}</strong>
+              <strong style="color: #F7F7F7;">{{ i.details.name }}</strong>
               <small v-if="i.details.formattedDate">
                 @ {{ i.details.formattedDate }}
               </small>
@@ -371,16 +371,20 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/scss/var.scss";
+.section {
+  background: #0F133B;
+}
 
 .section * {
   font-family: $primary-font !important;
+  font-size: 1.15rem !important;
 }
 
 section,
 .text-confirm,
 .label,
 .title {
-  color: #a6853e !important;
+  color: #F7F7F7 !important;
 }
 
 .fa {

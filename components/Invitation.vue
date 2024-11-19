@@ -21,7 +21,7 @@
 				data-aos="zoom-in"
 				src="~/assets/images/custom/assalamualaikum.png"
 				alt="assalamualaikum"
-				style="width: 65%; margin-bottom: 1.5rem"
+				style="width: 55%; margin-bottom: 1.5rem"
 			/>
 			<!-- <div
 				data-aos="zoom-in"
@@ -35,7 +35,7 @@
 				data-aos="zoom-in"
 				src="~/assets/images/custom/parents.png"
 				alt="parents"
-				style="width: 90%; margin-bottom: 1.5rem"
+				style="width: 80%; margin-bottom: 1.5rem"
 			/>
 			<!-- <div v-if="i.invitation_section.show_parents" class="parents">
 				<div data-aos="zoom-out-left" data-aos-duration="1000">
@@ -70,14 +70,14 @@
 				data-aos="zoom-in"
 				src="~/assets/images/custom/invitetext-2.png"
 				alt="invitetext-2"
-				style="width: 60%; margin-bottom: 1.5rem"
+				style="width: 55%; margin-bottom: 1.5rem"
 			/>
 
 			<img
 				data-aos="zoom-in"
 				src="~/assets/images/custom/namafullpengantin.png"
 				alt="namafullpengantin"
-				style="width: 100%; margin-bottom: 1.5rem"
+				style="width: 75%; margin-bottom: 1.5rem"
 			/>
 
 			<!-- <div
@@ -109,7 +109,14 @@
 				data-aos="zoom-in"
 				src="~/assets/images/custom/info-majlis.png"
 				alt="info-majlis"
-				style="width: 100%; margin-bottom: 1rem"
+				style="width: 75%; margin-bottom: 1rem"
+			/>
+
+						<img
+				data-aos="zoom-in"
+				src="~/assets/images/custom/info-majlis-alamat.png"
+				alt="info-majlis"
+				style="width: 75%; margin-bottom: 1rem"
 			/>
 
 			<!-- <div class="date">

@@ -12,23 +12,23 @@
 },
   "groom_or_bride_first": "bride",
   "groom": {
-    "fullname": "Che Muhammad 'Affan Che Abdullah",
-    "nickname": "'Affan"
+    "fullname": "",
+    "nickname": "'"
   },
   "bride": {
-    "fullname": "Nur Syuhada Zulkifli",
-    "nickname": "Syu"
+    "fullname": "",
+    "nickname": ""
   },
   "parents": {
     "name": "Zulkifli Hassim (Zul)",
     "andWith": "Raja Taksiah Raja Abdullah (Siah)"
   },
   "date": {
-    "greg": "05 Nov 2022",
+    "greg": "14 Dis 2024",
     "gregBox": {
-      "month": "Nov",
+      "month": "Dis",
       "day": "Sabtu",
-      "dayNumber": "05",
+      "dayNumber": "14",
       "time": "11:00AM",
       "year": "2022"
     },
@@ -39,13 +39,13 @@
     "to": "5:00 PM"
   },
   "address": {
-    "general": "Denai Sepuloh",
-    "exact_html": "Denai Sepuloh, 12, Jalan Denai 10, Kempas Baru, Johor Bahru, Johor",
-    "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4279648831257!2d103.714042600497!3d1.512643571655709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da7384093cf467%3A0x268d1fc4aecc4d0b!2sDenai%20Sepuloh!5e0!3m2!1sen!2smy!4v1664812014965!5m2!1sen!2smy\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-    "gmaps_link": "https://goo.gl/maps/uqwD5Q8dfsUcybUs8",
-    "waze_link": "https://ul.waze.com/ul?place=ChIJZ_Q8CYRz2jERC03MrsQfjSY&ll=1.51264360%2C103.71404260&navigate=yes"
+    "general": "Kompleks Tan Sri Mohamed Rahmat",
+    "exact_html": "Kompleks Tan Sri Mohamed Rahmat, Jalan Mata Kucing, Kampung Pasir, Johor Bahru, Johor",
+    "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4608567977325!2d103.7008014758723!3d1.494642998491342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da72c04dcb3543%3A0xc33454bc598aa951!2sKompleks%20Tan%20Sri%20Mohamed%20Rahmat%20Johor%20Bahru!5e0!3m2!1sen!2smy!4v1732008341075!5m2!1sen!2smy\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+    "gmaps_link": "https://maps.app.goo.gl/VXkX4ahMZC1o9B86A",
+    "waze_link": "https://ul.waze.com/ul?place=ChIJQzXLTcBy2jERUamKWbxUNMM&ll=1.49464300%2C103.70337640&navigate=yes"
   },
-  "countdown_end": "2022-11-05 11:00 AM",
+  "countdown_end": "2024-12-14 11:00 AM",
   "main_section": {
   },
   "invitation_section": {
@@ -58,20 +58,20 @@
     "tentatives": [
       {
         "time": "11:00 AM",
-        "details": "Walimatul Urus bermula"
+        "details": "Walimatul urus bermula"
       },
       {
-        "time": "1:30 PM",
-        "details": "Ketibaan Pengantin"
+        "time": "2:00 PM",
+        "details": "Ketibaan pasangan pengantin"
       },
       {
         "time": "5:00 PM",
-        "details": "Walimatul Urus berakhir"
+        "details": "Walimatul urus berakhir"
       }
     ]
   },
   "social_section": {
-    "ig_tags": "AffanDanSyu",
+    "ig_tags": "",
     "ig_signature": null,
     "carouselAutoplay": true,
     "images": [
@@ -83,7 +83,7 @@
       {
         "name": "Zul Hassim",
         "rel": "Ayah",
-        "tel": 60107001533,
+        "tel": 60105535383,
         "whatsapp": true
       },
       {
@@ -99,23 +99,17 @@
         "whatsapp": true
       },
       {
-        "name": "Nadia Zulkifli",
-        "rel": "Adik",
-        "tel": 601115098067,
-        "whatsapp": true
-      },
-      {
-        "name": "Syazana Zulkifli",
-        "rel": "Adik",
-        "tel": 60127320561,
+        "name": "Syuhada Zulkifli",
+        "rel": "Kakak",
+        "tel": 60127009320,
         "whatsapp": true
       }
     ]
   },
   "ics": {
     "enabled": 1,
-    "subject": "Walimatul Urus - Syu & 'Affan",
-    "start": [2022, 11, 5, 11, 0],
+    "subject": "Walimatul Urus - Syazana & Nadzmi",
+    "start": [2024, 12, 14, 11, 0],
     "duration": { "hours": 6 }
   }
 }

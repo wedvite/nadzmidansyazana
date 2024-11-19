@@ -29,7 +29,7 @@
 						data-aos-delay="500"
 						src="~/assets/images/custom/walimatulurus.png"
 						alt="walimatulurus"
-						style="width: 50%; margin-bottom: 1.5rem"
+						style="width: 60%; margin-bottom: 2.5rem"
 					/>
 				</div>
 				<!-- <div
@@ -47,9 +47,16 @@
 					data-aos="zoom-in"
 					data-aos-duration="2000"
 					data-aos-delay="500"
-					src="~/assets/images/custom/Syu-'Affan.png"
-					alt="Syu-'Affan"
-					style="width: 60%; margin-bottom: 1.5rem"
+					src="~/assets/images/custom/SN.png"
+					style="width: 50%; margin-bottom: 3rem"
+				/>
+
+				<img
+					data-aos="zoom-in"
+					data-aos-duration="2000"
+					data-aos-delay="500"
+					src="~/assets/images/custom/syazana-nadzmi.png"
+					style="width: 70%; margin-bottom: 4rem"
 				/>
 
 				<!-- <div
@@ -100,7 +107,7 @@
 					data-aos-delay="500"
 					src="~/assets/images/custom/date-time-venue.png"
 					alt="date-time-venue"
-					style="width: 95%"
+					style="width: 75%"
 				/>
 
 				<!-- <div
