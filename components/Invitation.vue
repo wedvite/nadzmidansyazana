@@ -4,29 +4,6 @@
 		class="hero is-fullheight has-text-centered bg-image-custom"
 		style="justify-content: center"
 	>
-		<audio v-if="!showMusicModal" controls autoplay>
-			<source src="music.mp3" type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio>
-		<MusicModal v-model="showMusicModal" >
-			<img
-				data-aos="zoom-in"
-				data-aos-duration="1000"
-				data-aos-delay="500"
-				src="~/assets/images/custom/walimatulurus.png"
-				alt="walimatulurus"
-				style="width: 60%; margin-bottom: 2.5rem"
-			/>
-
-			<img
-				data-aos="zoom-in"
-				data-aos-duration="2000"
-				data-aos-delay="500"
-				src="~/assets/images/custom/SN.png"
-				style="width: 50%; margin-bottom: 3rem"
-			/>
-		</MusicModal>
-
 		<!-- <img
 			data-aos="zoom-in"
 			src="~/assets/images/bismillah-white.png"
@@ -179,16 +156,8 @@
 </template>
 
 <script>
-import MusicModal from "~/components/Common/MusicModal";
-
 import { mapState } from "vuex";
 export default {
-	components: { MusicModal },
-	data() {
-		return {
-			showMusicModal: true
-		}
-	},
 	computed: {
 		...mapState({
 			i: (state) => state.info,
@@ -320,18 +289,6 @@ export default {
 		// border: 1px solid #4a4a4a;
 		word-wrap: break-word;
 	}
-}
-
-/* Style the audio player to make it slim */
-audio {
-	width: 90%;
-	height: 30px; /* Slim height */
-	border-radius: 20px; /* Optional rounded corners */
-	background-color: #f5f5f5; /* Background color */
-	border: none;
-	outline: none;
-	margin: auto;
-	margin-bottom: 1.5rem;
 }
 </style>
 

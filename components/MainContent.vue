@@ -105,6 +105,7 @@
 					data-aos="fade-right"
 					data-aos-duration="1000"
 					data-aos-delay="500"
+					data-aos-offset="0"
 					src="~/assets/images/custom/date-time-venue.png"
 					alt="date-time-venue"
 					style="width: 75%"

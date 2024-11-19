@@ -8,6 +8,7 @@ export const allowedEmails = [
   "fadziljusri@gmail.com",
   "syazanazulkifli2@gmail.com",
   "miem901@gmail.com",
+  "nsyuhada.zulkifli@gmail.com"
 ]
 
 export const fireStore = {

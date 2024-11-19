@@ -6,6 +6,7 @@
 		<tentative v-if="check(sectionStatus.tentative)" />
 		<doa v-if="check(sectionStatus.doa)"></doa>
 		<countdown v-if="check(sectionStatus.countdown)" />
+		<music-modal />
 		<social v-if="check(sectionStatus.social)" />
 		<wishlist v-if="check(sectionStatus.wishlist)" />
 		<rsvp v-if="check(sectionStatus.rsvp)" />
@@ -23,6 +24,7 @@ import Invitation from "~/components/Invitation";
 import Tentative from "~/components/Tentative";
 import Doa from "~/components/Doa";
 import Countdown from "~/components/Countdown";
+import MusicModal from "~/components/MusicModal";
 import Social from "~/components/Social";
 import Wishlist from "~/components/Wishlist";
 import Rsvp from "~/components/Rsvp";
@@ -43,6 +45,7 @@ export default {
 		Wishlist,
 		Rsvp,
 		AppFooter: Footer,
+		MusicModal,
 	},
 	computed: {
 		...mapState({
