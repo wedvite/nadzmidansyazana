@@ -372,7 +372,7 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/var.scss";
 .section {
-  background: #0F133B;
+  background: #411018;
 }
 
 .section * {

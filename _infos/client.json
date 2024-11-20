@@ -10,7 +10,7 @@
     "social": 1,
     "wishlist": 0
 },
-  "groom_or_bride_first": "bride",
+  "groom_or_bride_first": "groom",
   "groom": {
     "fullname": "",
     "nickname": "'"
@@ -20,15 +20,15 @@
     "nickname": ""
   },
   "parents": {
-    "name": "Zulkifli Hassim (Zul)",
-    "andWith": "Raja Taksiah Raja Abdullah (Siah)"
+    "name": "",
+    "andWith": ""
   },
   "date": {
-    "greg": "14 Dis 2024",
+    "greg": "28 Dis 2024",
     "gregBox": {
       "month": "Dis",
       "day": "Sabtu",
-      "dayNumber": "14",
+      "dayNumber": "28",
       "time": "11:00AM",
       "year": "2022"
     },
@@ -36,16 +36,16 @@
   },
   "time": {
     "from": "11:00 AM",
-    "to": "5:00 PM"
+    "to": "4:00 PM"
   },
   "address": {
-    "general": "Kompleks Tan Sri Mohamed Rahmat",
-    "exact_html": "Kompleks Tan Sri Mohamed Rahmat, Jalan Mata Kucing, Kampung Pasir, Johor Bahru, Johor",
-    "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4608567977325!2d103.7008014758723!3d1.494642998491342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da72c04dcb3543%3A0xc33454bc598aa951!2sKompleks%20Tan%20Sri%20Mohamed%20Rahmat%20Johor%20Bahru!5e0!3m2!1sen!2smy!4v1732008341075!5m2!1sen!2smy\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-    "gmaps_link": "https://maps.app.goo.gl/VXkX4ahMZC1o9B86A",
-    "waze_link": "https://ul.waze.com/ul?place=ChIJQzXLTcBy2jERUamKWbxUNMM&ll=1.49464300%2C103.70337640&navigate=yes"
+    "general": "Dewan Kenanga, Bangi Golf Resort",
+    "exact_html": "Dewan Kenanga, Bangi Golf Resort, Bangi Golf Club, Bandar Baru Bangi, Selangor",
+    "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.50456551438!2d101.76265197587581!3d2.95739979701879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdcbd1ef8f1fa7%3A0xe50d7bcbfd5873ad!2sDewan%20Kenanga!5e0!3m2!1sen!2smy!4v1732084356866!5m2!1sen!2smy\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+    "gmaps_link": "https://maps.app.goo.gl/kL1zG9HRYCTCCThf6",
+    "waze_link": "https://ul.waze.com/ul?place=ChIJpx-P79HLzTERrXNY_ct7DeU&ll=2.95739980%2C101.76522690&navigate=yes"
   },
-  "countdown_end": "2024-12-14 11:00 AM",
+  "countdown_end": "2024-12-28 11:00 AM",
   "main_section": {
   },
   "invitation_section": {
@@ -65,7 +65,7 @@
         "details": "Ketibaan pasangan pengantin"
       },
       {
-        "time": "5:00 PM",
+        "time": "4:00 PM",
         "details": "Walimatul urus berakhir"
       }
     ]
@@ -81,35 +81,29 @@
     "override_icons_color": true,
     "contacts": [
       {
-        "name": "Zul Hassim",
+        "name": "Ruzaini Tamin",
         "rel": "Ayah",
-        "tel": 60105535383,
+        "tel": 60104280504,
         "whatsapp": true
       },
       {
-        "name": "Raja Taksiah",
+        "name": "Zurina Mansor",
         "rel": "Ibu",
-        "tel": 60107001566,
+        "tel": 60126328842,
         "whatsapp": true
       },
       {
-        "name": "Luqman Zulkifli",
-        "rel": "Abang",
-        "tel": 601132510222,
-        "whatsapp": true
-      },
-      {
-        "name": "Syuhada Zulkifli",
+        "name": "Ain Nadhirah",
         "rel": "Kakak",
-        "tel": 60127009320,
+        "tel": 60123562126,
         "whatsapp": true
       }
     ]
   },
   "ics": {
     "enabled": 1,
-    "subject": "Walimatul Urus - Syazana & Nadzmi",
-    "start": [2024, 12, 14, 11, 0],
-    "duration": { "hours": 6 }
+    "subject": "Walimatul Urus - Nadzmi & Syazana",
+    "start": [2024, 12, 28, 11, 0],
+    "duration": { "hours": 5 }
   }
 }

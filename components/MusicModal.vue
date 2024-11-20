@@ -139,8 +139,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$primary-color: #0f133b;
-$secondary-color: #83578E;
+$primary-color: #411018;
+$secondary-color: #8A6A42;
 
 /* Full-screen overlay */
 .overlay {
