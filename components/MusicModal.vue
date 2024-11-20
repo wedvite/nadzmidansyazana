@@ -30,7 +30,7 @@
   </div>
   <div v-else id="music-section">
     <audio  controls autoplay>
-      <source src="music.mp3" type="audio/mpeg">
+      <source src="/music.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div>
